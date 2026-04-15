@@ -1,0 +1,3 @@
+[2026-04-15 00:56:00] INFO  Board running
+[2026-04-15 00:56:01] CRITICAL kernel BUG at mm/slab.c:2847
+[2026-04-15 00:56:02] ERROR  Rebooting in 5 seconds

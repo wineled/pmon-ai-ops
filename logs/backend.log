@@ -1,0 +1,9 @@
+INFO:     Started server process [32944]
+INFO:     Waiting for application startup.
+[32m2026-04-15 00:53:38[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-15 00:53:38[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-15 00:53:38[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:7225 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7237 - "GET /api/health HTTP/1.1" 200 OK

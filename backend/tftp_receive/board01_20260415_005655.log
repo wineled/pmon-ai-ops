@@ -1,0 +1,12 @@
+[2026-04-15 00:57:00] INFO  Board running
+[2026-04-15 00:57:01] WARNING Watchdog timer reset (timeout=30s)
+[2026-04-15 00:57:02] CRITICAL kernel BUG at mm/slab.c:2847
+[2026-04-15 00:57:02] CRITICAL Modules linked in: pmon_core gpio_pwm thermal
+[2026-04-15 00:57:02] CRITICAL CPU: 0 PID: 1234 Comm: kworker/0:1
+[2026-04-15 00:57:02] CRITICAL Stack trace:
+[2026-04-15 00:57:02] CRITICAL   [<c0012345>] kmalloc_order+0x18/0x2c
+[2026-04-15 00:57:02] CRITICAL   [<c0056789>] alloc_pages_current+0xb0/0xd4
+[2026-04-15 00:57:02] CRITICAL   [<c00abcde>] slab_alloc+0x1e0/0x448
+[2026-04-15 00:57:02] CRITICAL   [<c0123456>] device_probe+0x40/0xbc
+[2026-04-15 00:57:02] CRITICAL r0: 0x00000000  r1: 0x00000001  r2: 0xc0012345
+[2026-04-15 00:57:03] ERROR  Rebooting in 5 seconds...

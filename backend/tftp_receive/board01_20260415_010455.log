@@ -1,0 +1,3 @@
+[2026-04-15 01:05:00] INFO  Board boot
+[2026-04-15 01:05:01] INFO  voltage=3300 mv, current=450 ma, temp=43 c
+[2026-04-15 01:05:02] INFO  voltage=3299 mv, current=448 ma, temp=43.5 c

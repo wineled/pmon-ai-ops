@@ -1,0 +1,8 @@
+[2026-04-15 01:02:00] INFO  Board running
+[2026-04-15 01:02:01] INFO  voltage=3300 mv, current=450 ma, temp=43 c
+[2026-04-15 01:02:02] CRITICAL kernel BUG at mm/slab.c:2847
+[2026-04-15 01:02:02] CRITICAL Modules linked in: pmon_core gpio_pwm thermal
+[2026-04-15 01:02:02] CRITICAL Stack trace:
+[2026-04-15 01:02:02] CRITICAL   [<c0012345>] kmalloc_order+0x18/0x2c
+[2026-04-15 01:02:02] CRITICAL   [<c0056789>] alloc_pages_current+0xb0/0xd4
+[2026-04-15 01:02:02] ERROR  Rebooting in 5 seconds...
