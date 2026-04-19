@@ -1,0 +1,29 @@
+{
+  "recommendations": [
+    // Python
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "charliermarsh.ruff",
+    "ms-python.mypy-type-checker",
+    
+    // JavaScript/TypeScript
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    
+    // General
+    "eamodio.gitlens",
+    "github.vscode-github-actions",
+    "ms-vscode.vscode-json",
+    "redhat.vscode-yaml",
+    "ms-azuretools.vscode-docker",
+    
+    // Markdown
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    
+    // Testing
+    "hbenl.vscode-test-explorer",
+    "littlefoxteam.vscode-python-test-adapter"
+  ]
+}

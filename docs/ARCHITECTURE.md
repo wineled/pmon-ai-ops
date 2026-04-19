@@ -1,13 +1,13 @@
-# PMON-AI-OPS Backend — 系统架构文档
+# AI-Ops Backend — 系统架构文档
 
-> 本文档描述 PMON-AI-OPS 后端系统的完整技术架构、组件职责、数据流向与 API 接口。
+> 本文档描述人工智能运维系统后端的完整技术架构、组件职责、数据流向与 API 接口。
 > 技术栈：Python 3.13 · FastAPI · uvicorn · Pydantic v2 · httpx · watchdog 6.0 · orjson
 
 ---
 
 ## 1. 系统概述
 
-PMON-AI-OPS 后端是一个**异步事件驱动的嵌入式设备日志实时监控系统**。
+AI-Ops 后端是一个**异步事件驱动的嵌入式设备日志实时监控系统**。
 
 **核心能力：**
 

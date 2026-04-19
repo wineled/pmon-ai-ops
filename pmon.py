@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PMON-AI-OPS Unified Service Manager
+"""AI-Ops Unified Service Manager (人工智能运维系统)
 
 Usage:
     python pmon.py start       # Start all services (backend + frontend + proxy)
@@ -112,7 +112,7 @@ def kill_port(port: int):
 
 def cmd_start():
     print("\n" + "=" * 50)
-    print("  PMON-AI-OPS  Starting Services")
+    print("  AI-Ops  Starting Services")
     print("=" * 50 + "\n")
 
     pids = {}
@@ -212,7 +212,7 @@ def cmd_start():
     # 8. Summary
     print()
     print("=" * 50)
-    print("  PMON-AI-OPS  All Services Running!")
+    print("  AI-Ops  All Services Running!")
     print("=" * 50)
     print(f"""
   Frontend (browser):
@@ -235,7 +235,7 @@ def cmd_start():
 
 def cmd_stop():
     print("\n" + "=" * 50)
-    print("  PMON-AI-OPS  Stopping Services")
+    print("  AI-Ops  Stopping Services")
     print("=" * 50 + "\n")
 
     # Kill by PID file first
@@ -275,7 +275,7 @@ def cmd_stop():
 
 
 def cmd_status():
-    print("\n  PMON-AI-OPS  Service Status")
+    print("\n  AI-Ops  Service Status")
     print("  " + "-" * 40)
 
     for port, name in [(BACKEND_PORT, "Backend"), (VITE_PORT, "Frontend"), (PROXY_PORT, "Proxy")]:

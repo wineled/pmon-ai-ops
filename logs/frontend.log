@@ -29,3 +29,30 @@ AggregateError [ECONNREFUSED]:
 [2m01:17:35[22m [31m[1m[vite][22m[39m [31mws proxy error:[39m
 Error: read ECONNRESET
     at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
+  [32m[1mVITE[22m v6.4.2[39m  [2mready in [0m[1m382[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://169.254.125.111:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.10.5:[1m5173[22m/[39m
+[2m01:35:39[22m [31m[1m[vite][22m[39m [31mws proxy error:[39m
+Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+[2m01:35:48[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m Re-optimizing dependencies because lockfile has changed
+
+  [32m[1mVITE[22m v6.4.2[39m  [2mready in [0m[1m579[22m[2m[0m ms[22m
+
+  [32m➜[39m  [1mLocal[22m:   [36mhttp://localhost:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://169.254.125.111:[1m5173[22m/[39m
+  [32m➜[39m  [1mNetwork[22m: [36mhttp://192.168.10.5:[1m5173[22m/[39m
+[2m01:39:18[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/main.tsx[22m
+[2m01:39:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ new dependencies optimized: [33mi18next, react-i18next, i18next-browser-languagedetector[32m[39m
+[2m01:39:20[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32m✨ optimized dependencies changed. reloading[39m
+[2m01:39:33[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/Header.tsx, /src/index.css[22m
+[2m01:39:52[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/layout/Sidebar.tsx, /src/index.css[22m
+[2m01:40:12[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/dashboard/LogStream.tsx, /src/index.css[22m
+[2m01:40:45[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/AlertsPage.tsx, /src/index.css[22m
+[2m01:40:58[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/pages/BinAnalysisPage.tsx, /src/index.css[22m
+[2m01:41:22[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/i18n/locales/zh-CN.json[22m
+[2m01:41:38[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mpage reload [39m[2msrc/i18n/locales/en-US.json[22m
+[2m01:42:26[22m [36m[1m[vite][22m[39m [90m[2m(client)[22m[39m [32mhmr update [39m[2m/src/components/analysis/BinUploader.tsx, /src/index.css[22m

@@ -1,0 +1,75 @@
+version: '3.8'
+
+services:
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Backend Service
+  # ═══════════════════════════════════════════════════════════════════════════
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: pmon-backend
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+      - DEEPSEEK_BASE_URL=${DEEPSEEK_BASE_URL:-https://api.deepseek.com/v1}
+      - TFTP_RECEIVE_DIR=/app/tftp_receive
+      - CODE_INDEX_DIRS=/app/data
+      - HTTP_PORT=8000
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+    volumes:
+      - ../data/tftp:/app/tftp_receive
+      - ../data:/app/data
+      - ../logs:/app/logs
+    networks:
+      - pmon-network
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/health')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Frontend Service
+  # ═══════════════════════════════════════════════════════════════════════════
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: pmon-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - pmon-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ═══════════════════════════════════════════════════════════════════════════
+  # Nginx Reverse Proxy (Optional)
+  # ═══════════════════════════════════════════════════════════════════════════
+  nginx:
+    image: nginx:alpine
+    container_name: pmon-nginx
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - backend
+      - frontend
+    networks:
+      - pmon-network
+
+networks:
+  pmon-network:
+    driver: bridge

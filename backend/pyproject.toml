@@ -1,8 +1,8 @@
 # backend/pyproject.toml
 [project]
-name = "pmon-ai-ops-backend"
+name = "ai-ops-backend"
 version = "0.2.0"
-description = "PMON-AI-OPS Backend: Embedded Power Monitor with AI-Powered Log Analysis"
+description = "人工智能运维系统 - 后端服务（日志分析、AI诊断、二进制反汇编）"
 requires-python = ">=3.11"
 dependencies = [
     "fastapi>=0.110.0",
