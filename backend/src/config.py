@@ -18,10 +18,10 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    # ── DeepSeek API ──────────────────────────────────────────────────────────
+    # ── DeepSeek API (兼容 OpenAI 格式) ───────────────────────────────────────
     deepseek_api_key: str = "sk-please-set-your-key"
-    deepseek_base_url: str = "https://api.deepseek.com/v1"
-    deepseek_model: str = "deepseek-chat"
+    deepseek_base_url: str = "https://api.groq.com/openai/v1"  # Groq 免费 API
+    deepseek_model: str = "llama-3.3-70b-versatile"  # Groq 免费模型
 
     # ── Directories ──────────────────────────────────────────────────────────
     tftp_receive_dir: Path = Path("./tftp_receive")
