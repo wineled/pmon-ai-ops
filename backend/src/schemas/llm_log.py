@@ -8,7 +8,7 @@ from datetime import datetime
 from enum import Enum
 from typing import Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class Language(str, Enum):
@@ -62,8 +62,8 @@ class LLMLogRequest(BaseModel):
         description="Override default LLM model",
     )
 
-    class Config:
-        json_schema_extra = {
+    model_config = ConfigDict(
+        json_schema_extra={
             "example": {
                 "logs": [
                     "[PMON] System started OK",
@@ -76,6 +76,7 @@ class LLMLogRequest(BaseModel):
                 "include_code": True,
             }
         }
+    )
 
 
 class CrashAddress(BaseModel):

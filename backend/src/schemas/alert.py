@@ -34,7 +34,7 @@ class AIDiagnosis(BaseModel):
 class AlertPayload(BaseModel):
     """WebSocket payload emitted when an alert is triggered."""
 
-    type: str = Field(default="alert", literal=True)
+    type: str = Field(default="alert", json_schema_extra={"literal": True})
     id: str = Field(default_factory=lambda: f"alert-{datetime.utcnow().timestamp()}")
     device: str
     level: AlertLevel
