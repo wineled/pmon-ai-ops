@@ -1,3 +1,4 @@
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -10,29 +11,28 @@ dist/
 .venv
 env/
 venv/
+
+# IDE
 .idea/
 .vscode/
 *.swp
 .DS_Store
+
+# Project specific
 memory/
-*.json
-tftp_receive/*.log
+logs/
+.pmon_pids.json
 tftp_receive/
+*.log
 SDV_TEST_REPORT*.md
-*.md
 *TEST_REPORT*.md
 task-summary*.md
+
+# Temp scripts
 run*.py
 sdv*.py
 fix_ct.py
-restart*.bat
-stop*.bat
-start_services.py
-sdv_runner.py
-sdv_result.txt
-run1.py
-run2.py
 test_arm_disasm.py
 test_frontend.py
-start-*.bat
-start-*.ps1
+sdv_runner.py
+sdv_result.txt
