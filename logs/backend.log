@@ -7,3 +7,70 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     127.0.0.1:7225 - "GET /api/health HTTP/1.1" 200 OK
 INFO:     127.0.0.1:7237 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     Started server process [5972]
+INFO:     Waiting for application startup.
+[32m2026-04-20 00:15:29[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-20 00:15:29[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-20 00:15:29[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:34551 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:15:31[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 00:15:31[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+INFO:     127.0.0.1:5963 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:15:33[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=2)[0m
+[32m2026-04-20 00:15:33[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=2)[0m
+INFO:     connection open
+INFO:     127.0.0.1:5964 - "GET /api/health HTTP/1.1" 200 OK
+[32m2026-04-20 00:17:08[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=1)[0m
+[32m2026-04-20 00:17:08[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=1)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:8329 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:17:09[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=2)[0m
+[32m2026-04-20 00:17:09[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=2)[0m
+INFO:     connection open
+[32m2026-04-20 00:17:10[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=1)[0m
+[32m2026-04-20 00:17:10[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=1)[0m
+INFO:     connection closed
+[32m2026-04-20 00:17:11[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 00:17:11[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:41873 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:17:12[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 00:17:12[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+INFO:     127.0.0.1:43344 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     Started server process [21432]
+INFO:     Waiting for application startup.
+[32m2026-04-20 00:29:31[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-20 00:29:31[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-20 00:29:31[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:7032 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:29:35[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 00:29:35[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+INFO:     127.0.0.1:7033 - "GET /api/health HTTP/1.1" 200 OK
+[32m2026-04-20 00:31:37[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 00:31:37[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:16127 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:31:37[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 00:31:37[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+[32m2026-04-20 00:41:38[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 00:41:38[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:16024 - "WebSocket /ws" [accepted]
+[32m2026-04-20 00:41:38[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 00:41:38[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+[32m2026-04-20 01:00:49[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 01:00:49[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:26184 - "WebSocket /ws" [accepted]
+[32m2026-04-20 01:00:50[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 01:00:50[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open

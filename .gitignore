@@ -1,4 +1,6 @@
-# Python
+# PMON-AI-OPS .gitignore
+
+# ── Python ──────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
@@ -7,32 +9,37 @@ __pycache__/
 build/
 dist/
 *.egg-info/
-.env
-.venv
-env/
+.venv/
 venv/
+env/
 
-# IDE
+# ── Node ────────────────────────────────────────
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# ── IDE ─────────────────────────────────────────
 .idea/
 .vscode/
 *.swp
+*.swo
 .DS_Store
+Thumbs.db
 
-# Project specific
-memory/
+# ── Environment ─────────────────────────────────
+.env
+*.pem
+
+# ── Runtime & Logs ──────────────────────────────
 logs/
 .pmon_pids.json
-tftp_receive/
-*.log
-SDV_TEST_REPORT*.md
-*TEST_REPORT*.md
-task-summary*.md
+backend/tftp_receive/*.log
 
-# Temp scripts
-run*.py
-sdv*.py
-fix_ct.py
-test_arm_disasm.py
-test_frontend.py
-sdv_runner.py
+# ── Test artifacts ──────────────────────────────
 sdv_result.txt
+sdv_results.json
+sdv_final.json
+
+# ── OS ──────────────────────────────────────────
+.DS_Store
+desktop.ini

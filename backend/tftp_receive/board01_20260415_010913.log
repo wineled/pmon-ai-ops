@@ -1,6 +1,0 @@
-[2026-04-15 01:09:00] INFO  Board boot
-[2026-04-15 01:09:01] INFO  voltage=3300 mv, current=450 ma, temp=43 c
-[2026-04-15 01:09:02] CRITICAL kernel BUG at mm/slab.c:2847
-[2026-04-15 01:09:02] CRITICAL Stack trace:
-[2026-04-15 01:09:02] CRITICAL   [<c0012345>] kmalloc_order+0x18
-[2026-04-15 01:09:02] ERROR  Rebooting in 5 seconds

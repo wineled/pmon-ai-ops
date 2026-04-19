@@ -172,13 +172,13 @@ def cmd_start():
 
     # 5. Start HTTP proxy (for phtunnel)
     log("PROXY", f"Starting HTTP proxy on :{PROXY_PORT} -> :{VITE_PORT}...", "info")
-    proxy_script = FRONTEND_DIR / "http_proxy.py"
+    proxy_script = PROJECT_ROOT / "tools" / "http_proxy.py"
     proxy_log = PROJECT_ROOT / "logs" / "proxy.log"
 
     if proxy_script.exists():
         proxy_proc = subprocess.Popen(
             [sys.executable, "-X", "utf8", str(proxy_script)],
-            cwd=str(FRONTEND_DIR),
+            cwd=str(PROJECT_ROOT),
             stdout=open(proxy_log, "a", encoding="utf-8"),
             stderr=subprocess.STDOUT,
         )

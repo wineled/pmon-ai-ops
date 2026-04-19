@@ -1,3 +1,0 @@
-[2026-04-15 01:00:00] INFO  Board boot complete
-[2026-04-15 01:00:01] INFO  voltage=3300 mv, current=450 ma, temp=43 c
-[2026-04-15 01:00:02] WARNING Watchdog timer reset

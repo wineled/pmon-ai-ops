@@ -53,8 +53,19 @@ async def get_config(request: Request) -> dict:
     from ..config import settings
     return {
         "tftp_dir": str(settings.tftp_receive_dir),
+        "patches_dir": str(settings.patches_dir),
+        "code_index_dirs": settings.code_index_dirs,
         "deepseek_model": settings.deepseek_model,
+        "deepseek_base_url": settings.deepseek_base_url,
+        "http_host": settings.http_host,
+        "http_port": settings.http_port,
+        "ws_host": settings.ws_host,
+        "ws_port": settings.ws_port,
         "log_level": settings.log_level,
+        "ai_max_retries": settings.ai_max_retries,
+        "ai_timeout_seconds": settings.ai_timeout_seconds,
+        "memory_max_logs": settings.memory_max_logs,
+        "memory_max_alerts": settings.memory_max_alerts,
     }
 
 
@@ -67,6 +78,11 @@ async def clear_all() -> dict[str, str]:
 
 @api_router.post("/admin/reload-config")
 async def reload_config() -> dict[str, str]:
-    """Reload settings from .env (placeholder — actual reload logic goes here)."""
-    logger.warning("[Admin] reload-config called (no-op in MVP)")
-    return {"status": "ok", "message": "Config reload not yet implemented"}
+    """Reload settings from .env file."""
+    from ..config import Settings
+    global settings
+    # Re-initialize settings to reload from .env
+    settings = Settings()
+    settings.ensure_dirs()
+    logger.info("[Admin] Config reloaded from .env")
+    return {"status": "ok", "message": "Config reloaded successfully"}

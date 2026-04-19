@@ -6,6 +6,7 @@ All settings are loaded from environment variables / .env file.
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
+from typing import Optional
 
 
 class Settings(BaseSettings):
@@ -31,11 +32,38 @@ class Settings(BaseSettings):
     code_index_dirs: str = "../,../../"
 
     # ── Server ───────────────────────────────────────────────────────────────
+    http_host: str = "0.0.0.0"
     http_port: int = 8000
+    ws_host: str = "0.0.0.0"
     ws_port: int = 8765
 
     # ── Logging ──────────────────────────────────────────────────────────────
     log_level: str = "INFO"
+
+    # ── AI Engine ────────────────────────────────────────────────────────────
+    ai_max_retries: int = 3
+    ai_initial_delay: float = 1.0  # seconds
+    ai_timeout_seconds: float = 30.0
+    ai_temperature: float = 0.2
+    ai_max_tokens: int = 1024
+
+    # ── TFTP Watcher ─────────────────────────────────────────────────────────
+    tftp_max_wait_seconds: float = 5.0
+    tftp_size_stable_threshold: float = 0.5
+    tftp_min_file_size: int = 4
+
+    # ── Code Index ───────────────────────────────────────────────────────────
+    index_chunk_max_tokens: int = 512
+    index_chunk_overlap: int = 50
+    index_min_chunk_lines: int = 5
+
+    # ── WebSocket ────────────────────────────────────────────────────────────
+    ws_max_connections: int = 100
+    ws_ping_interval: int = 30
+
+    # ── Memory Service ───────────────────────────────────────────────────────
+    memory_max_logs: int = 1000
+    memory_max_alerts: int = 100
 
     def ensure_dirs(self) -> None:
         """Create required directories if they don't exist."""

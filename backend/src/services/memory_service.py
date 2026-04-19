@@ -10,6 +10,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from typing import Any
 
+from ..config import settings
+
 
 @dataclass
 class LogEntry:
@@ -33,11 +35,16 @@ class AlertEntry:
 class MemoryService:
     """Thread-safe in-memory store for logs and alerts."""
 
-    def __init__(self, max_logs: int = 500, max_alerts: int = 100) -> None:
+    def __init__(
+        self,
+        max_logs: int | None = None,
+        max_alerts: int | None = None,
+    ) -> None:
         self._logs: list[LogEntry] = []
         self._alerts: list[AlertEntry] = []
-        self._max_logs = max_logs
-        self._max_alerts = max_alerts
+        # Use settings from config.py, fallback to defaults
+        self._max_logs = max_logs or settings.memory_max_logs
+        self._max_alerts = max_alerts or settings.memory_max_alerts
         self._lock = asyncio.Lock()
 
     # ── Logs ─────────────────────────────────────────────────────────────────

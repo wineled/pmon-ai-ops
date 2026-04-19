@@ -1,6 +1,7 @@
 # backend/src/constants.py
 """
 Constants: regex patterns and keyword lists for log parsing and error detection.
+Note: Configurable values are in config.py, these are static patterns only.
 """
 
 import re
@@ -91,6 +92,7 @@ INFO_KEYWORDS: Final[list[str]] = [
 ]
 
 # ── AI Prompt Templates ───────────────────────────────────────────────────────
+# Note: Can be overridden via config in future versions
 
 SYSTEM_PROMPT: Final[str] = (
     "You are an embedded Linux kernel expert. "
@@ -105,8 +107,6 @@ SYSTEM_PROMPT: Final[str] = (
 )
 
 # ── TFTP File Patterns ────────────────────────────────────────────────────────
+# Note: File extensions are static, timing configs moved to config.py
 
 LOG_FILE_EXTENSIONS: Final[set[str]] = {".log", ".txt", ".dmp", ".core"}
-MIN_FILE_SIZE_BYTES: Final[int] = 4
-MAX_WAIT_SECONDS: Final[float] = 5.0
-SIZE_STABLE_THRESHOLD_SECONDS: Final[float] = 0.5

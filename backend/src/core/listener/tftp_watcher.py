@@ -14,7 +14,8 @@ from typing import TYPE_CHECKING
 
 from watchdog.observers import Observer
 
-from ...constants import LOG_FILE_EXTENSIONS, SIZE_STABLE_THRESHOLD_SECONDS
+from ...constants import LOG_FILE_EXTENSIONS
+from ...config import settings
 from ...utils.logger import logger
 from .models import TFTPFileEvent
 
@@ -68,7 +69,7 @@ class TFTPHandler:
         """Wait for transfer completion then push onto the queue."""
         from ...utils.file_utils import wait_for_file_complete
 
-        if not await wait_for_file_complete(path, stable_threshold=SIZE_STABLE_THRESHOLD_SECONDS):
+        if not await wait_for_file_complete(path, stable_threshold=settings.tftp_size_stable_threshold):
             logger.warning(f"[TFTP] Skipping {path} - transfer incomplete")
             return
 
