@@ -14,6 +14,7 @@ from ..core.ai_engine import DeepSeekClient
 from ..core.listener import TFTPFileEvent, extract_metrics, parse_log_file
 from ..core.notifier import ConnectionManager, dispatch_alert, dispatch_metrics, dispatch_stream
 from ..core.preprocessor import detect_error, enrich_error_context
+from ..services.memory_service import memory_service
 from ..utils.logger import logger
 
 
@@ -37,6 +38,15 @@ async def run_pipeline(queue: asyncio.Queue[TFTPFileEvent], settings: Settings, 
 
                 # 2. Dispatch stream event
                 await dispatch_stream(ws_manager, event.device, event.size_bytes)
+
+                # 2b. Also record in HTTP memory store
+                for entry in entries:
+                    memory_service.add_log({
+                        "id": f"{event.device}-{entry.line_number}",
+                        "timestamp": entry.timestamp.isoformat() if entry.timestamp else "",
+                        "device": event.device,
+                        "message": entry.raw,
+                    })
 
                 # 3. Extract metrics and broadcast
                 metrics_list = extract_metrics(entries)

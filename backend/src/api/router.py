@@ -33,6 +33,38 @@ async def metrics(request: Request) -> dict:
     }
 
 
+from ..services.memory_service import memory_service
+
+@api_router.get("/logs")
+async def get_logs() -> dict:
+    """Return recent log entries."""
+    return {"logs": memory_service.get_recent_logs()}
+
+
+@api_router.get("/alerts")
+async def get_alerts() -> dict:
+    """Return current alerts list."""
+    return {"alerts": memory_service.get_alerts()}
+
+
+@api_router.get("/config")
+async def get_config(request: Request) -> dict:
+    """Return system config (safe fields only)."""
+    from ..config import settings
+    return {
+        "tftp_dir": str(settings.tftp_receive_dir),
+        "deepseek_model": settings.deepseek_model,
+        "log_level": settings.log_level,
+    }
+
+
+@api_router.delete("/clear")
+async def clear_all() -> dict[str, str]:
+    """Clear all in-memory logs and alerts."""
+    memory_service.clear()
+    return {"status": "ok", "message": "Cleared"}
+
+
 @api_router.post("/admin/reload-config")
 async def reload_config() -> dict[str, str]:
     """Reload settings from .env (placeholder — actual reload logic goes here)."""

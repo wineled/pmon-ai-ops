@@ -18,6 +18,8 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from .api.router import api_router
+from .api.disasm_router import disasm_router
+from .api.llm_router import llm_router
 from .api.websocket import websocket_endpoint
 from .config import settings
 from .core.listener import start_watcher
@@ -90,6 +92,12 @@ app = FastAPI(
 
 # HTTP API routes: /api/health, /api/metrics, …
 app.include_router(api_router)
+
+# Disassembly routes: /api/disasm/upload, /api/disasm/resolve, …
+app.include_router(disasm_router)
+
+# LLM Log Analysis routes: /api/llm/log, /api/llm/index, …
+app.include_router(llm_router)
 
 # WebSocket route: /ws  (ConnectionManager accessed via request.app.state)
 app.add_api_websocket_route("/ws", websocket_endpoint)

@@ -1,4 +1,4 @@
-// backend/pyproject.toml
+# backend/pyproject.toml
 [project]
 name = "pmon-ai-ops-backend"
 version = "0.1.0"

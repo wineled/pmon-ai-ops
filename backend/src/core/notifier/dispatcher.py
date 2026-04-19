@@ -8,6 +8,7 @@ from pathlib import Path
 from ...schemas.alert import AlertLevel, AlertPayload, AIDiagnosis
 from ...schemas.log import MetricsData
 from ...schemas.ws_message import MetricsPayload, StreamPayload, metrics_to_payload
+from ...services.memory_service import memory_service
 from ...utils.logger import logger
 from .manager import ConnectionManager
 
@@ -53,5 +54,15 @@ async def dispatch_stream(ws_manager: ConnectionManager, device: str, bytes_tran
 
 
 async def dispatch_alert(ws_manager: ConnectionManager, diagnosis: AIDiagnosis, device: str) -> None:
-    """Broadcast an AlertPayload."""
-    await ws_manager.broadcast(make_alert_payload(diagnosis, device))
+    """Broadcast an AlertPayload and store in memory."""
+    alert = make_alert_payload(diagnosis, device)
+    await ws_manager.broadcast(alert)
+    memory_service.add_alert({
+        "id": f"{device}-{alert.timestamp}",
+        "device": device,
+        "level": alert.level.value if hasattr(alert.level, "value") else alert.level,
+        "summary": alert.summary,
+        "ai_suggestion": alert.ai_suggestion,
+        "patch_content": alert.patch_content,
+        "timestamp": alert.timestamp,
+    })
