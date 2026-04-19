@@ -130,14 +130,15 @@ class CodeIndex:
         ".venv310", "site-packages", "node_modules",
     }
 
-    # Directories to index (top-level relative paths)
-    DEFAULT_CODE_DIRS = [
+    # Directories to index (overridden by Settings.code_index_paths)
+    DEFAULT_CODE_DIRS: list[str] = [
         "../",           # sibling to backend/
         "../../",        # project root
     ]
 
-    def __init__(self, code_root: Optional[str] = None):
+    def __init__(self, code_root: Optional[str] = None, default_dirs: list[str] | None = None):
         self.code_root = code_root
+        self.default_dirs = default_dirs or self.DEFAULT_CODE_DIRS
         self.chunks: list[CodeChunk] = []
         self.chunk_index: dict[str, int] = {}  # chunk_id → index
         self.file_chunks: dict[str, list[int]] = {}  # file_path → [chunk_ids]
@@ -164,7 +165,7 @@ class CodeIndex:
         self._keywords.clear()
         self._doc_freq.clear()
 
-        paths = code_paths or self.DEFAULT_CODE_DIRS
+        paths = code_paths or self.default_dirs
         if isinstance(paths, str):
             paths = [paths]
 
@@ -632,15 +633,15 @@ class CodeIndex:
 _code_index: CodeIndex | None = None
 
 
-def get_code_index() -> CodeIndex:
+def get_code_index(default_dirs: list[str] | None = None) -> CodeIndex:
     """Get or create the global code index singleton."""
     global _code_index
     if _code_index is None:
-        _code_index = CodeIndex()
+        _code_index = CodeIndex(default_dirs=default_dirs)
     return _code_index
 
 
-def build_code_index(code_paths: list[str] | None = None) -> IndexStats:
+def build_code_index(code_paths: list[str] | None = None, default_dirs: list[str] | None = None) -> IndexStats:
     """Build/rebuild the global code index."""
-    index = get_code_index()
+    index = get_code_index(default_dirs=default_dirs)
     return index.build(code_paths)

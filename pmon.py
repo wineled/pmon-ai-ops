@@ -242,9 +242,21 @@ def cmd_stop():
     pids = load_pids()
     for name, pid in pids.items():
         try:
-            os.kill(pid, 0)  # check alive
-            kill_proc(pid)
-            log("STOP", f"{name} PID={pid}", "ok")
+            if os.name == "nt":
+                # On Windows, check with tasklist
+                result = subprocess.run(
+                    ["tasklist", "/FI", f"PID eq {pid}", "/NH"],
+                    capture_output=True, text=True, timeout=5,
+                )
+                if str(pid) in result.stdout:
+                    kill_proc(pid)
+                    log("STOP", f"{name} PID={pid}", "ok")
+                else:
+                    log("SKIP", f"{name} PID={pid} (not running)", "warn")
+            else:
+                os.kill(pid, 0)
+                kill_proc(pid)
+                log("STOP", f"{name} PID={pid}", "ok")
         except ProcessLookupError:
             log("SKIP", f"{name} PID={pid} (not running)", "warn")
 

@@ -26,6 +26,10 @@ class Settings(BaseSettings):
     tftp_receive_dir: Path = Path("./tftp_receive")
     patches_dir: Path = Path("./patches")
 
+    # Directories to index for LLM code retrieval (comma-separated)
+    # e.g. "../,../../" means: sibling dir + project root
+    code_index_dirs: str = "../,../../"
+
     # ── Server ───────────────────────────────────────────────────────────────
     http_port: int = 8000
     ws_port: int = 8765
@@ -37,6 +41,11 @@ class Settings(BaseSettings):
         """Create required directories if they don't exist."""
         self.tftp_receive_dir.mkdir(parents=True, exist_ok=True)
         self.patches_dir.mkdir(parents=True, exist_ok=True)
+
+    @property
+    def code_index_paths(self) -> list[str]:
+        """Parse code_index_dirs into a list of paths."""
+        return [p.strip() for p in self.code_index_dirs.split(",") if p.strip()]
 
 
 settings = Settings()

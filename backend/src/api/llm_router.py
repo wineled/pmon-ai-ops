@@ -27,6 +27,7 @@ from ..services.llm_analysis_service import (
 from ..services.code_index_service import (
     get_code_index, build_code_index, CodeIndex, CodeChunk,
 )
+from ..config import settings
 from ..utils.logger import logger
 
 llm_router = APIRouter(prefix="/api/llm", tags=["llm"])
@@ -172,14 +173,10 @@ async def build_index(req: IndexRequest) -> IndexResponse:
         if req.code_paths:
             paths = req.code_paths
         else:
-            # Default: index sibling directories to backend/
-            import os
-            backend_dir = os.path.dirname(os.path.dirname(__file__))  # src/../ = project root
-            paths = [
-                os.path.join(backend_dir, ".."),  # project root
-            ]
+            # Use configured code_index_dirs from .env
+            paths = settings.code_index_paths
 
-        stats = build_code_index(paths)
+        stats = build_code_index(paths, default_dirs=settings.code_index_paths)
 
         return IndexResponse(success=True, stats=_to_index_stats(stats))
 
