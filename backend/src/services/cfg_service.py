@@ -153,12 +153,13 @@ class CFGGenerator:
         
         # ARM: bx lr, pop {pc}, mov pc, lr
         if self.arch in ("arm", "thumb"):
-            if mnemonic in ("bx", "pop") and op in ("lr", "lr,"):
+            if mnemonic == "bx" and "lr" in op:
                 return True
-            if "pc" in op and "lr" in op:
+            if mnemonic == "pop" and "pc" in op:
                 return True
-            # v7 ARM return patterns
-            if "pc" in op:
+            if mnemonic == "mov" and "pc" in op and "lr" in op:
+                return True
+            if mnemonic == "ldr" and "pc" in op:
                 return True
         
         # RISC-V: jr ra, ret
@@ -197,23 +198,16 @@ class CFGGenerator:
         """Check if instruction is a branch/jump."""
         mnemonic = insn.mnemonic.lower().strip()
         
-        # Unconditional branch
-        if mnemonic in ("b", "jmp", "jal", "jalr", "br"):
+        branch_set = BRANCH_MNEMONICS.get(self.arch, set())
+        if mnemonic in branch_set:
             return True
         
-        # Conditional branches
-        if self.arch in ("arm", "thumb"):
-            if mnemonic.startswith("b.") or mnemonic.startswith("cb"):
+        # arm64 dot-notation: b.eq, b.ne, etc.
+        if self.arch in ("arm", "arm64", "thumb"):
+            if mnemonic.startswith("b."):
                 return True
         
-        if self.arch == "arm64":
-            if mnemonic.startswith("b.") or mnemonic.startswith("cbn") or mnemonic.startswith("tbn"):
-                return True
-        
-        if self.arch == "riscv":
-            if mnemonic.startswith("b") and mnemonic not in ("beq", "bne", "blt", "bge", "bltu", "bgeu"):
-                return True
-        
+        # x86: any instruction starting with 'j' (jmp, je, jne, etc.)
         if self.arch in ("x86", "x86_64"):
             if mnemonic.startswith("j"):
                 return True
@@ -223,34 +217,38 @@ class CFGGenerator:
     def _is_conditional(self, insn: CFGInstruction) -> bool:
         """Check if branch is conditional."""
         mnemonic = insn.mnemonic.lower().strip()
+        op = insn.op_str.lower().strip()
         
         if self.arch in ("arm", "thumb"):
-            # b.eq, b.ne, bne, beq, etc.
-            if mnemonic.startswith("b.") or mnemonic.startswith("cb"):
+            # ARM dot-notation: b.eq, b.ne, etc.
+            if mnemonic.startswith("b."):
                 return True
-            # Not unconditional
-            if mnemonic in UNCOND_BRANCH.get(self.arch, set()):
-                return False
-            # Conditional patterns
-            cond_mnemonics = {
-                "beq", "bne", "blt", "ble", "bgt", "bge",
-                "bcc", "bcs", "bmi", "bpl", "bvs", "bvc", "bhi", "bls",
-                "bal",  # alias for always (actually unconditional)
-            }
-            if mnemonic in cond_mnemonics and mnemonic != "bal":
+            # CBZ/CBNZ are conditional branches
+            if mnemonic.startswith("cb"):
+                return True
+            # Old-style conditional: beq, bne, blt, etc. (but NOT bl, b, bx, blx, bal)
+            uncond = UNCOND_BRANCH.get(self.arch, set())
+            if mnemonic in BRANCH_MNEMONICS.get(self.arch, set()) and mnemonic not in uncond:
                 return True
             return False
         
         if self.arch in ("x86", "x86_64"):
-            if mnemonic.startswith("j") and mnemonic not in ("jmp",):
+            # All 'j' except 'jmp' are conditional
+            if mnemonic.startswith("j") and mnemonic != "jmp":
+                return True
+            # loop variants are conditional
+            if mnemonic.startswith("loop"):
                 return True
         
         if self.arch == "arm64":
-            if mnemonic.startswith("b.") or mnemonic.startswith("cbn") or mnemonic.startswith("tbn"):
+            if mnemonic.startswith("b."):
+                return True
+            if mnemonic.startswith("cbn") or mnemonic.startswith("tbn") or mnemonic.startswith("cbz"):
                 return True
         
         if self.arch == "riscv":
-            if mnemonic.startswith("b"):
+            # All b* except jal/jalr are conditional branches
+            if mnemonic.startswith("b") and mnemonic not in ("bal",):
                 return True
         
         return False
@@ -306,14 +304,9 @@ class CFGGenerator:
         Compute basic block boundaries.
         
         Algorithm:
-        1. Every instruction CAN start a block; leaders are: entry + targets of
-           branches + fall-through targets of blocks ending with jumps.
-        2. A block ends at:
-           - return instruction
-           - unconditional branch/jump
-           - unconditional call (next insn is a leader for return path)
-        3. Conditional branches: both fall-through target and branch target
-           are leaders.
+        1. Mark leaders: entry + targets of branches/jumps + fall-through after
+           branches/jumps/returns.
+        2. A block ends at: return, unconditional branch, conditional branch.
         
         Returns:
             List of (start_addr, end_addr, start_idx, end_idx)
@@ -327,21 +320,28 @@ class CFGGenerator:
         for i, insn in enumerate(self.instructions):
             is_return = self._is_return(insn)
             is_call = self._is_call(insn)
-            # Only non-call unconditional branches split blocks (plain `b`, `jmp`, etc.)
-            is_uncond_jump = (
-                self._is_branch(insn)
-                and not self._is_conditional(insn)
-                and not is_call
-            )
+            is_branch = self._is_branch(insn) and not is_call
+            is_cond = self._is_conditional(insn)
             
-            if is_return:
-                # Return ends the block, no fall-through needed.
-                pass
-            elif is_uncond_jump:
-                # Unconditional jump: target starts a new block.
-                target = self._parse_jump_target(insn)
-                if target is not None and target in self.addr_to_insn:
-                    leaders[target] = "jump_target"
+            if is_return or is_branch or is_call:
+                # This instruction ends the current block.
+                # Fall-through (next instruction after branch/return/call) starts a new block.
+                if i + 1 < len(self.instructions):
+                    next_addr = self.instructions[i + 1].address
+                    if next_addr not in leaders:
+                        leaders[next_addr] = "fallthrough"
+                
+                # For branches with a known target, the target is also a leader.
+                if not is_cond:
+                    # Unconditional: only target is a leader (no fall-through)
+                    target = self._parse_jump_target(insn)
+                    if target is not None and target in self.addr_to_insn:
+                        leaders[target] = "jump_target"
+                else:
+                    # Conditional: both target and fall-through are leaders
+                    target = self._parse_jump_target(insn)
+                    if target is not None and target in self.addr_to_insn:
+                        leaders[target] = "branch_target"
         
         # Sort leaders
         leaders_sorted = sorted(leaders.keys())
@@ -419,7 +419,38 @@ class CFGGenerator:
                 ))
                 continue
             
-            # Unconditional branch / jump
+            # Call instruction: call edge + fall-through return edge
+            # (MUST check before branch, since bl/blx are in BRANCH_MNEMONICS too)
+            if self._is_call(last_insn):
+                target = self._parse_jump_target(last_insn)
+                
+                if target is not None and target in self.addr_to_block:
+                    self.edges.append(CFGEdge(
+                        from_block=block_idx,
+                        to_block=self.addr_to_block[target],
+                        edge_type="call",
+                        comment=f"call to 0x{target:x}",
+                    ))
+                else:
+                    # Call with unknown target (indirect call)
+                    self.edges.append(CFGEdge(
+                        from_block=block_idx,
+                        to_block=-1,
+                        edge_type="call",
+                        comment=f"call via {last_insn.mnemonic} (target unknown)",
+                    ))
+                
+                # Fall-through (return from call)
+                if block_idx + 1 < len(self.blocks):
+                    self.edges.append(CFGEdge(
+                        from_block=block_idx,
+                        to_block=block_idx + 1,
+                        edge_type="fallthrough",
+                        comment="return from call (fall-through)",
+                    ))
+                continue
+            
+            # Unconditional branch / jump (non-call)
             if self._is_branch(last_insn) and not self._is_conditional(last_insn):
                 target = self._parse_jump_target(last_insn)
                 
@@ -477,36 +508,6 @@ class CFGGenerator:
                         to_block=-1,
                         edge_type="indirect_jump",
                         comment=f"indirect branch via {last_insn.mnemonic}",
-                    ))
-                continue
-            
-            # Call instruction: call edge + fall-through return edge
-            if self._is_call(last_insn):
-                target = self._parse_jump_target(last_insn)
-                
-                if target is not None and target in self.addr_to_block:
-                    self.edges.append(CFGEdge(
-                        from_block=block_idx,
-                        to_block=self.addr_to_block[target],
-                        edge_type="call",
-                        comment=f"call to 0x{target:x}",
-                    ))
-                else:
-                    # Call with unknown target (indirect call)
-                    self.edges.append(CFGEdge(
-                        from_block=block_idx,
-                        to_block=-1,
-                        edge_type="call",
-                        comment=f"call via {last_insn.mnemonic} (target unknown)",
-                    ))
-                
-                # Fall-through (return path)
-                if block_idx + 1 < len(self.blocks):
-                    self.edges.append(CFGEdge(
-                        from_block=block_idx,
-                        to_block=block_idx + 1,
-                        edge_type="fallthrough",
-                        comment="return from call (fall-through)",
                     ))
                 continue
             
