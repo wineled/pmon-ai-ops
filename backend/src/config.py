@@ -4,9 +4,9 @@ Configuration management using Pydantic Settings.
 All settings are loaded from environment variables / .env file.
 """
 
-from pydantic_settings import BaseSettings, SettingsConfigDict
 from pathlib import Path
-from typing import Optional
+
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):

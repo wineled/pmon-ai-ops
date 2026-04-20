@@ -4,9 +4,6 @@ Disassembly API Router: upload, status, disassembly, symbols, resolve, analyze.
 
 from __future__ import annotations
 
-import uuid
-from typing import Optional
-
 from fastapi import APIRouter, File, Form, HTTPException, UploadFile
 
 from ..schemas.disasm import (
@@ -25,8 +22,8 @@ disasm_router = APIRouter(prefix="/api/disasm", tags=["disasm"])
 
 @disasm_router.post("/upload", response_model=UploadResponse)
 async def upload_binary(
-    file: UploadFile = File(...),
-    arch: str = Form(default="auto"),
+    file: UploadFile = File(...),  # noqa: B008
+    arch: str = Form(default="auto"),  # noqa: B008
     base_addr: str = Form(default="0x0"),
 ) -> UploadResponse:
     """
@@ -42,13 +39,13 @@ async def upload_binary(
     # Parse base address
     try:
         base = int(base_addr, 16) if base_addr.startswith("0x") else int(base_addr, 0)
-    except ValueError:
-        raise HTTPException(status_code=400, detail=f"Invalid base_addr: {base_addr}")
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"Invalid base_addr: {base_addr}") from exc
 
     try:
         meta = disasm_service.load_binary(data, filename, arch=arch, base_addr=base)
     except ValueError as exc:
-        raise HTTPException(status_code=422, detail=str(exc))
+        raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     logger.info(f"[API/disasm] Uploaded {filename}: arch={meta.arch}, symbols={meta.symbol_count}")
     return UploadResponse(status="ok", meta=meta)
@@ -103,8 +100,8 @@ async def resolve_address(address: str) -> AddressResolveResult:
     """
     try:
         addr = int(address, 16) if address.startswith("0x") else int(address, 0)
-    except ValueError:
-        raise HTTPException(status_code=400, detail=f"Invalid address: {address}")
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=f"Invalid address: {address}") from exc
 
     return disasm_service.resolve_address(addr)
 

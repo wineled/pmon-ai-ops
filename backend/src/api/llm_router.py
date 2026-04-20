@@ -9,25 +9,30 @@ GET  /api/llm/retrieve   - Search code (standalone)
 from __future__ import annotations
 
 import asyncio
-from typing import Optional
 
-from fastapi import APIRouter, BackgroundTasks, HTTPException, Query
-from fastapi.responses import StreamingResponse
+from fastapi import APIRouter, Query
 
+from ..config import settings
 from ..schemas.llm_log import (
-    LLMLogRequest, LLMLogResponse,
-    LogParseResult, RetrievedChunk,
-    IndexRequest, IndexResponse, IndexStats,
-    CrashAddress, Severity,
-    BatchLLMLogRequest, BatchLLMLogResponse,
-)
-from ..services.llm_analysis_service import (
-    get_llm_service, count_tokens,
+    BatchLLMLogRequest,
+    BatchLLMLogResponse,
+    CrashAddress,
+    IndexRequest,
+    IndexResponse,
+    IndexStats,
+    LLMLogRequest,
+    LLMLogResponse,
+    LogParseResult,
+    RetrievedChunk,
+    Severity,
 )
 from ..services.code_index_service import (
-    get_code_index, build_code_index, CodeIndex, CodeChunk,
+    build_code_index,
+    get_code_index,
 )
-from ..config import settings
+from ..services.llm_analysis_service import (
+    get_llm_service,
+)
 from ..utils.logger import logger
 
 llm_router = APIRouter(prefix="/api/llm", tags=["llm"])
@@ -170,11 +175,7 @@ async def build_index(req: IndexRequest) -> IndexResponse:
     """
     try:
         # Determine paths to index
-        if req.code_paths:
-            paths = req.code_paths
-        else:
-            # Use configured code_index_dirs from .env
-            paths = settings.code_index_paths
+        paths = req.code_paths or settings.code_index_paths
 
         stats = build_code_index(paths, default_dirs=settings.code_index_paths)
 
@@ -257,8 +258,8 @@ def _to_parse_result(p) -> LogParseResult:
         error_type=p.error_type,
         severity=Severity(p.severity),
         crash_addresses=[
-            CrashAddress(address=a, hex=f"0x{a:08X}", label=l)
-            for a, l in zip(p.crash_addresses, p.crash_locations or [])
+            CrashAddress(address=a, hex=f"0x{a:08X}", label=loc)
+            for a, loc in zip(p.crash_addresses, p.crash_locations or [], strict=False)
         ],
         summary=p.summary,
         raw_text=p.raw_text,

@@ -6,7 +6,6 @@ Structured data models for log entries and metrics extracted from raw logs.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from typing import Optional
 
 from pydantic import BaseModel, Field
 
@@ -15,7 +14,7 @@ class LogEntry(BaseModel):
     """A single parsed line from a device log file."""
 
     raw: str = Field(..., description="Original unprocessed line")
-    timestamp: Optional[datetime] = Field(default=None, description="Parsed timestamp if present")
+    timestamp: datetime | None = Field(default=None, description="Parsed timestamp if present")
     device: str = Field(default="unknown", description="Device identifier extracted from filename or line")
     level: str = Field(default="INFO", description="Log level: DEBUG/INFO/WARNING/ERROR/CRITICAL")
     message: str = Field(..., description="Log message body")
@@ -26,9 +25,9 @@ class MetricsData(BaseModel):
     """Real-time power/temperature metrics from a device log entry."""
 
     device: str = Field(default="unknown")
-    voltage_mv: Optional[float] = Field(default=None, ge=0, description="Voltage in millivolts")
-    current_ma: Optional[float] = Field(default=None, ge=0, description="Current in milliamps")
-    temp_c: Optional[float] = Field(default=None, description="Temperature in Celsius")
+    voltage_mv: float | None = Field(default=None, ge=0, description="Voltage in millivolts")
+    current_ma: float | None = Field(default=None, ge=0, description="Current in milliamps")
+    temp_c: float | None = Field(default=None, description="Temperature in Celsius")
     timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
@@ -42,4 +41,4 @@ class ErrorContext(BaseModel):
     register_dump: str = Field(default="", description="Collected register dump lines")
     surrounding_lines: list[str] = Field(default_factory=list, description="5 lines before + 5 after")
     timestamp: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
-    file_path: Optional[str] = Field(default=None)
+    file_path: str | None = Field(default=None)

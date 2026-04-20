@@ -4,21 +4,19 @@ LLM Log Analysis API schemas.
 
 from __future__ import annotations
 
-from datetime import datetime
-from enum import Enum
-from typing import Optional
+from enum import StrEnum
 
-from pydantic import BaseModel, Field, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 
-class Language(str, Enum):
+class Language(StrEnum):
     """Response language."""
     AUTO = "auto"
     ZH = "zh"
     EN = "en"
 
 
-class Severity(str, Enum):
+class Severity(StrEnum):
     """Inferred log severity."""
     CRITICAL = "CRITICAL"
     WARNING = "WARNING"
@@ -57,7 +55,7 @@ class LLMLogRequest(BaseModel):
         description="Token budget for retrieved code context",
     )
 
-    model: Optional[str] = Field(
+    model: str | None = Field(
         default=None,
         description="Override default LLM model",
     )

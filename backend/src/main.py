@@ -13,20 +13,19 @@ Production:
 from __future__ import annotations
 
 import asyncio
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, suppress
 
 from fastapi import FastAPI
 
-from .api.router import api_router
 from .api.disasm_router import disasm_router
 from .api.llm_router import llm_router
+from .api.router import api_router
 from .api.websocket import websocket_endpoint
 from .config import settings
 from .core.listener import start_watcher
 from .core.notifier import ConnectionManager
 from .services.pipeline import run_pipeline
 from .utils.logger import logger
-
 
 # ── Lifespan ──────────────────────────────────────────────────────────────────
 
@@ -74,10 +73,8 @@ async def lifespan(app: FastAPI):
     logger.info("[Shutdown] Stopping background tasks…")
     watcher_task.cancel()
     pipeline_task.cancel()
-    try:
+    with suppress(asyncio.CancelledError):
         await asyncio.gather(watcher_task, pipeline_task)
-    except asyncio.CancelledError:
-        pass
     logger.info("[Shutdown] Done")
 
 

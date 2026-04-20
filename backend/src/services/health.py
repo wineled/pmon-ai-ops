@@ -4,7 +4,6 @@
 from pathlib import Path
 
 from ..config import settings
-from ..utils.logger import logger
 
 
 async def check_tftp_dir() -> tuple[bool, str]:

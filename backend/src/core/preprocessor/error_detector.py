@@ -4,14 +4,13 @@ Scan a list of LogEntry objects for fatal/kernel errors.
 Returns an ErrorContext bundle for the first match, or None.
 """
 
-from typing import Optional
 
 from ...constants import KERNEL_OPS_RE, PANIC_RE, SEGFAULT_RE
 from ...schemas.log import ErrorContext, LogEntry
 from ...utils.logger import logger
 
 
-def detect_error(entries: list[LogEntry]) -> Optional[ErrorContext]:
+def detect_error(entries: list[LogEntry]) -> ErrorContext | None:
     """
     Scan *entries* in order and return the first ErrorContext found.
 

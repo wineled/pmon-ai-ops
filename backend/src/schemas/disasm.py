@@ -6,13 +6,12 @@ Data models for binary analysis, disassembly, and address resolution.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from enum import Enum
-from typing import Optional
+from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
 
-class ArchEnum(str, Enum):
+class ArchEnum(StrEnum):
     """Supported CPU architectures."""
     AUTO = "auto"
     ARM = "arm"
@@ -29,7 +28,7 @@ class BinFileMeta(BaseModel):
     size_bytes: int = Field(..., description="File size in bytes")
     arch: str = Field(default="unknown", description="Detected/specified architecture")
     bits: int = Field(default=32, description="32 or 64 bit")
-    entry_point: Optional[int] = Field(default=None, description="Entry point address")
+    entry_point: int | None = Field(default=None, description="Entry point address")
     is_elf: bool = Field(default=False, description="Whether the file is an ELF binary")
     section_count: int = Field(default=0, description="Number of ELF sections")
     symbol_count: int = Field(default=0, description="Number of symbols found")

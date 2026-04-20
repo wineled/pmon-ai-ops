@@ -2,6 +2,7 @@
 """Loguru configuration — colored structured output to stdout."""
 
 import sys
+
 from loguru import logger
 
 # Remove the default handler added at import time

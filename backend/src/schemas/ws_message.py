@@ -6,7 +6,7 @@ Matches the exact schema expected by the frontend WebSocket consumer.
 
 from __future__ import annotations
 
-from typing import Literal, Union
+from typing import Literal
 
 from pydantic import BaseModel, Field
 
@@ -34,7 +34,7 @@ class MetricsPayload(BaseModel):
 
 
 # Union alias — used by ConnectionManager.broadcast()
-WSPayload = Union[StreamPayload, MetricsPayload, AlertPayload]
+WSPayload = StreamPayload | MetricsPayload | AlertPayload
 
 
 # ── Helper factories ───────────────────────────────────────────────────────────

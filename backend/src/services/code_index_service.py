@@ -14,16 +14,12 @@ Usage:
 
 from __future__ import annotations
 
-import re
-import os
-import mmap
 import hashlib
+import logging
+import os
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
-import struct
-
-import logging
 
 logger = logging.getLogger(__name__)
 
@@ -104,7 +100,7 @@ MIN_CHUNK_LINES = 5
 class CodeIndex:
     """
     In-memory code index for fast retrieval.
-    
+
     Supports:
     - File globbing and parsing (Python, C, C++, JavaScript, etc.)
     - Function-level chunking
@@ -127,7 +123,7 @@ class CodeIndex:
         "venv", "env", ".venv", ".env", "build", "dist", ".dist",
         "target", ".pytest_cache", ".mypy_cache", ".tox", "coverage",
         ".next", ".nuxt", ".cache", ".tmp", "temp", "tmp",
-        ".venv310", "site-packages", "node_modules",
+        ".venv310", "site-packages",
     }
 
     # Directories to index (overridden by Settings.code_index_paths)
@@ -136,7 +132,7 @@ class CodeIndex:
         "../../",        # project root
     ]
 
-    def __init__(self, code_root: Optional[str] = None, default_dirs: list[str] | None = None):
+    def __init__(self, code_root: str | None = None, default_dirs: list[str] | None = None):
         self.code_root = code_root
         self.default_dirs = default_dirs or self.DEFAULT_CODE_DIRS
         self.chunks: list[CodeChunk] = []
@@ -144,21 +140,21 @@ class CodeIndex:
         self.file_chunks: dict[str, list[int]] = {}  # file_path → [chunk_ids]
         self._keywords: list[str] = []  # global keyword list
         self._doc_freq: dict[str, int] = {}  # keyword → doc frequency
-        self.stats: Optional[IndexStats] = None
+        self.stats: IndexStats | None = None
 
     # ── Building ────────────────────────────────────────────────────────────────
 
     def build(self, code_paths: list[str] | None = None) -> IndexStats:
         """
         Build or rebuild the full code index.
-        
+
         Args:
-            code_paths: List of directories/files to index. 
+            code_paths: List of directories/files to index.
                         Defaults to DEFAULT_CODE_DIRS.
         """
         import time
         t0 = time.time()
-        
+
         self.chunks.clear()
         self.chunk_index.clear()
         self.file_chunks.clear()
@@ -190,12 +186,12 @@ class CodeIndex:
                         idx = len(self.chunks)
                         self.chunk_index[chunk.chunk_id] = idx
                         self.chunks.append(chunk)
-                    
+
                     # Language detection
                     ext = Path(file_path).suffix
                     lang = self._ext_to_lang(ext)
                     languages[lang] = languages.get(lang, 0) + 1
-                    
+
                     # Stats
                     total_lines += sum(c.lines for c in file_chunks)
                     total_size += os.path.getsize(file_path)
@@ -214,7 +210,7 @@ class CodeIndex:
             languages=languages,
             indexed_at=time.strftime("%Y-%m-%dT%H:%M:%S"),
         )
-        
+
         logger.info(
             f"[CodeIndex] Built in {elapsed:.1f}s: "
             f"{len(self.chunks)} chunks, {total_lines:,} lines, "
@@ -222,15 +218,15 @@ class CodeIndex:
         )
         return self.stats
 
-    def _resolve_path(self, p: str) -> Optional[str]:
+    def _resolve_path(self, p: str) -> str | None:
         """Resolve a path relative to code_root or absolute."""
         if os.path.isabs(p):
             return p if os.path.exists(p) else None
-        
+
         # Try relative to code_root
         if self.code_root and os.path.exists(os.path.join(self.code_root, p)):
             return os.path.join(self.code_root, p)
-        
+
         # Try as absolute
         if os.path.exists(p):
             return p
@@ -239,11 +235,11 @@ class CodeIndex:
     def _collect_files(self, root: str) -> list[str]:
         """Recursively collect all indexable files."""
         files = []
-        
+
         for dirpath, dirnames, filenames in os.walk(root):
             # Prune skip directories
             dirnames[:] = [d for d in dirnames if d not in self.SKIP_DIRS]
-            
+
             for fname in filenames:
                 fpath = os.path.join(dirpath, fname)
                 ext = os.path.splitext(fname)[1].lower()
@@ -252,13 +248,13 @@ class CodeIndex:
                     if any(kw in fname for kw in ["_generated", ".min.", ".bundle.", "dist/"]):
                         continue
                     files.append(fpath)
-        
+
         return files
 
     def _index_file(self, file_path: str) -> list[CodeChunk]:
         """Parse a single file into code chunks."""
         try:
-            with open(file_path, "r", encoding="utf-8", errors="replace") as f:
+            with open(file_path, encoding="utf-8", errors="replace") as f:
                 content = f.read()
         except Exception:
             return []
@@ -315,7 +311,7 @@ class CodeIndex:
         import re
         func_pattern = None
         for pat in func_patterns:
-            if re.match(pat.replace(r"^\s*", "").replace(r"\\s+", ""), 
+            if re.match(pat.replace(r"^\s*", "").replace(r"\\s+", ""),
                        lines[0] if lines else ""):
                 func_pattern = re.compile(pat, re.MULTILINE)
                 break
@@ -333,8 +329,6 @@ class CodeIndex:
 
         # Find function boundaries
         func_starts: list[tuple[int, str]] = []  # (line_idx, func_name)
-        prev_func_end = 0
-        prev_name = "<module>"
 
         for m in func_pattern.finditer(content):
             func_name = m.group(1) if m.groups() else f"<fn_{len(func_starts)}>"
@@ -354,7 +348,7 @@ class CodeIndex:
                 else len(lines)
             )
             chunk_lines = "".join(lines[start_line - 1:end_line])
-            
+
             if len(chunk_lines.strip()) < 20:
                 continue
 
@@ -378,18 +372,18 @@ class CodeIndex:
         """Split file into fixed-size line chunks."""
         lines = content.splitlines(keepends=True)
         chunks = []
-        
+
         # Target ~100 lines per chunk (adjust for token limit)
         target_lines = min(100, max(20, CHUNK_MAX_TOKENS // 10))
         i = 0
         chunk_num = 0
-        
+
         while i < len(lines):
             chunk_lines = lines[i : i + target_lines]
             chunk_content = "".join(chunk_lines)
             start_line = i + 1
             end_line = i + len(chunk_lines)
-            
+
             chunk_id = self._make_chunk_id(file_path, start_line, f"chunk_{chunk_num}")
             chunk = CodeChunk(
                 chunk_id=chunk_id,
@@ -400,7 +394,7 @@ class CodeIndex:
                 language=lang,
             )
             chunks.append(chunk)
-            
+
             i += target_lines - CHUNK_OVERLAP
             chunk_num += 1
 
@@ -416,21 +410,21 @@ class CodeIndex:
         import re
         word_freq: dict[str, int] = {}
         doc_count = len(self.chunks)
-        
+
         # Simple tokenizer
         word_pat = re.compile(r"\b[a-zA-Z_][a-zA-Z0-9_]{2,}\b")
-        
+
         for chunk in self.chunks:
             words = set(word_pat.findall(chunk.content.lower()))
             for w in words:
                 word_freq[w] = word_freq.get(w, 0) + 1
-        
+
         self._doc_freq = word_freq
         self._keywords = sorted(word_freq.keys())
-        
+
         # Precompute IDF for all words
         self._idf: dict[str, float] = {}
-        avg_dl = sum(len(c.content.split()) for c in self.chunks) / max(doc_count, 1)
+        sum(len(c.content.split()) for c in self.chunks) / max(doc_count, 1)
         for word, df in word_freq.items():
             # BM25 IDF formula
             self._idf[word] = max(
@@ -448,56 +442,56 @@ class CodeIndex:
     ) -> list[RetrievalResult]:
         """
         Retrieve the most relevant code chunks for a query.
-        
+
         Uses BM25-style keyword scoring + function name matching.
-        
+
         Args:
             query: Natural language search query
             top_k: Maximum number of chunks to return
             max_tokens: Approximate token budget for returned chunks
             lang_filter: Optional language filter (e.g., "python", "c")
-        
+
         Returns:
             Ranked list of RetrievalResult objects
         """
         import re
-        
+
         if not self.chunks:
             return []
-        
+
         # Tokenize query
         word_pat = re.compile(r"\b[a-zA-Z_][a-zA-Z0-9_]{2,}\b")
         query_words = set(word_pat.findall(query.lower()))
-        
+
         # Also extract quoted strings and special terms
         for m in re.finditer(r'"([^"]+)"', query):
             query_words.update(m.group(1).lower().split())
         for m in re.finditer(r"'([^']+)'", query):
             query_words.update(m.group(1).lower().split())
-        
+
         if not query_words:
             return []
 
         scores: dict[str, tuple[float, list[str]]] = {}
         avg_dl = sum(len(c.content.split()) for c in self.chunks) / len(self.chunks)
         k1, b = 1.5, 0.75  # BM25 parameters
-        
+
         for chunk in self.chunks:
             if lang_filter and chunk.language != lang_filter:
                 continue
-            
+
             chunk_words = set(word_pat.findall(chunk.content.lower()))
             matched = query_words & chunk_words
-            
+
             if not matched:
                 # Partial match on function names
                 fn_lower = chunk.function_name.lower() if chunk.function_name else ""
                 if fn_lower and any(q in fn_lower for q in query_words):
                     matched = query_words & set(fn_lower.split("_"))
-            
+
             if not matched:
                 continue
-            
+
             # BM25 score
             dl = len(chunk.content.split())
             score = 0.0
@@ -505,28 +499,28 @@ class CodeIndex:
                 tf = chunk_words.count(word)
                 idf = self._idf.get(word, 0.5)
                 score += idf * (tf * (k1 + 1)) / (tf + k1 * (1 - b + b * dl / avg_dl))
-            
+
             # Boost: function name match
             if chunk.function_name:
                 fn_match = sum(1 for q in query_words if q in chunk.function_name.lower())
                 score += fn_match * 5.0
-            
+
             # Boost: error-related keywords
             error_boost = sum(
-                1 for kw in matched 
+                1 for kw in matched
                 if kw in {"error", "fail", "exception", "crash", "bug", "fix", "warn"}
             )
             score += error_boost * 3.0
-            
+
             if chunk.file_path not in scores or scores[chunk.file_path][0] < score:
                 scores[chunk.file_path] = (score, list(matched))
-        
+
         # Rank and build results
         ranked = sorted(scores.items(), key=lambda x: -x[1][0])
-        
+
         results: list[RetrievalResult] = []
         used_tokens = 0
-        
+
         for file_path, (score, matched) in ranked:
             # Find the best chunk for this file (largest score)
             best_chunk = max(
@@ -538,13 +532,13 @@ class CodeIndex:
             )
             if not best_chunk:
                 continue
-            
+
             chunk_tokens = count_tokens(best_chunk.content)
             if used_tokens + chunk_tokens > max_tokens:
                 continue
-            
+
             used_tokens += chunk_tokens
-            
+
             # Determine relevance label
             if score > 20:
                 label = "core"
@@ -552,17 +546,17 @@ class CodeIndex:
                 label = "related"
             else:
                 label = "peripheral"
-            
+
             results.append(RetrievalResult(
                 chunk=best_chunk,
                 score=round(score, 2),
                 matched_keywords=list(matched),
                 relevance_label=label,
             ))
-            
+
             if len(results) >= top_k:
                 break
-        
+
         return results
 
     def get_context_for_llm(
@@ -573,14 +567,14 @@ class CodeIndex:
     ) -> str:
         """
         Build a code context string for LLM consumption.
-        
+
         Returns a formatted string with file references and code snippets.
         """
         results = self.retrieve(query, top_k=10, max_tokens=max_tokens, lang_filter=lang_filter)
-        
+
         if not results:
             return "/* No relevant code found for query */"
-        
+
         lines = [
             "/* =========================================================",
             "  CODE CONTEXT (Auto-retrieved)",
@@ -589,14 +583,14 @@ class CodeIndex:
             "========================================================== */",
             "",
         ]
-        
+
         current_file = ""
         for r in results:
             chunk = r.chunk
             if chunk.file_path != current_file:
                 lines.append(f'\n/* ── {chunk.file_path} ── */')
                 current_file = chunk.file_path
-            
+
             lines.append(
                 f'\n/* [{r.relevance_label}] score={r.score} '
                 f'lines={chunk.line_start}-{chunk.line_end} '
@@ -604,7 +598,7 @@ class CodeIndex:
                 f'keywords={", ".join(r.matched_keywords)} */'
             )
             lines.append(chunk.content)
-        
+
         return "\n".join(lines)
 
     @staticmethod

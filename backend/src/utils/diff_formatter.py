@@ -50,7 +50,7 @@ def format_patch(filename: str, old_code: str, new_code: str) -> str:
         f"+++ {new_path}\t{now}",
         f"@@ -1,{old_code.count(chr(10))+1} +1,{new_code.count(chr(10))+1} @@",
     ]
-    for i, line in enumerate(old_code.splitlines(), 1):
+    for _i, line in enumerate(old_code.splitlines(), 1):
         lines.append(f"-{line}")
     for line in new_code.splitlines():
         lines.append(f"+{line}")

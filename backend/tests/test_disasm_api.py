@@ -10,7 +10,6 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from httpx import AsyncClient, ASGITransport
 
 # Add backend root to path
 backend_root = Path(__file__).parent.parent
@@ -26,6 +25,7 @@ if str(backend_root) not in sys.path:
 def client() -> TestClient:
     """Create test client for the FastAPI app."""
     from src.main import app
+
     # Clear disasm service before each test
     from src.services.disasm_service import disasm_service
     disasm_service.clear()

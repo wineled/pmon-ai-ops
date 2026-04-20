@@ -14,8 +14,8 @@ from typing import TYPE_CHECKING
 
 from watchdog.observers import Observer
 
-from ...constants import LOG_FILE_EXTENSIONS
 from ...config import settings
+from ...constants import LOG_FILE_EXTENSIONS
 from ...utils.logger import logger
 from .models import TFTPFileEvent
 

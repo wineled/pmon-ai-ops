@@ -194,3 +194,1438 @@ INFO:     connection open
 [32m2026-04-20 01:42:20[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
 [32m2026-04-20 01:42:20[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
 INFO:     connection closed
+INFO:     Started server process [23924]
+INFO:     Waiting for application startup.
+[32m2026-04-20 01:42:54[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-20 01:42:54[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-20 01:42:54[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:9244 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     Started server process [12216]
+INFO:     Waiting for application startup.
+[32m2026-04-20 01:47:38[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-20 01:47:38[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-20 01:47:38[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:30236 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14087 - "WebSocket /ws" [accepted]
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     127.0.0.1:40756 - "WebSocket /ws" [accepted]
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 01:50:08[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+[32m2026-04-20 01:50:29[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mdisconnect[0m — [1m[WS] Client disconnected (total=0)[0m
+[32m2026-04-20 01:50:29[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client disconnected (total=0)[0m
+INFO:     connection closed
+INFO:     Started server process [23932]
+INFO:     Waiting for application startup.
+[32m2026-04-20 01:50:52[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Initialising PMON-AI-OPS backend…[0m
+[32m2026-04-20 01:50:52[0m | [1mINFO    [0m | [36msrc.main[0m:[36mlifespan[0m — [1m[Startup] Watching tftp_receive | DeepSeek=deepseek-chat | log_level=DEBUG[0m
+[32m2026-04-20 01:50:52[0m | [1mINFO    [0m | [36msrc.core.listener.tftp_watcher[0m:[36mstart_watcher[0m — [1m[TFTP] Watching tftp_receive[0m
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     127.0.0.1:15158 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59754 - "WebSocket /ws" [accepted]
+[32m2026-04-20 01:51:32[0m | [1mINFO    [0m | [36msrc.core.notifier.manager[0m:[36mconnect[0m — [1m[WS] Client connected (total=1)[0m
+[32m2026-04-20 01:51:32[0m | [1mINFO    [0m | [36msrc.api.websocket[0m:[36mwebsocket_endpoint[0m — [1m[WS] Client connected (total=1)[0m
+INFO:     connection open
+INFO:     127.0.0.1:42519 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 01:59:23[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 01:59:23[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:7299 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24108 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50903 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18705 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:18709 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47119 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 01:59:35[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 01:59:35[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:20910 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22318 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10366 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 01:59:41[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 01:59:41[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:1531 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2971 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7199 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 01:59:48[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 01:59:48[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:23989 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58891 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9975 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 01:59:54[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 01:59:54[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:55261 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34525 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30884 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36526 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:02[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:00:02[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:31720 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17475 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19480 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19482 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:10[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:00:10[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:17710 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45667 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28603 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50030 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:18[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:00:18[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:2656 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9873 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39496 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4245 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:26[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:00:26[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:4247 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35044 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8920 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23301 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:35[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:00:35[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:26276 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38018 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10742 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4645 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:43[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:00:43[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:8931 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8933 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21911 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10820 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:51[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:00:51[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:56899 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4448 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23009 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45549 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:00:59[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:00:59[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:23160 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32841 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46027 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41161 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2493 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44231 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44235 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28586 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33228 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19544 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:01:20[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:01:20[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:1523 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12445 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25633 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:01:26[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:01:26[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:34947 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48941 - "GET /api/disasm/disassembly?offset=0&limit=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48944 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6415 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:01:34[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:01:34[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:53402 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24880 - "GET /api/disasm/symbols?offset=0&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36240 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46580 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:01:42[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:01:42[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:37060 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5483 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19464 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19467 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:01:50[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:01:50[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:54428 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55163 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33679 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18197 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54127 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23574 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40001 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34211 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34215 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16857 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12924 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:58421 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46009 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:02:17[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded tiny.bin: arch=arm, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:02:17[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded tiny.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:27719 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32662 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36224 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38175 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:02:33[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:02:33[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:14487 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26999 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44702 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12247 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:4688 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22919 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:02:46[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:02:46[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:38886 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51578 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41635 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:02:52[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:02:52[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:41638 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12358 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39147 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:02:58[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:02:58[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:27940 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50614 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5364 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:04[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:03:04[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:46818 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45493 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50355 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50369 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:12[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:03:12[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:12150 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21132 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19347 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5553 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:20[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:03:20[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:18815 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13488 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8095 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44092 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:29[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:03:29[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:44094 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31880 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35274 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13843 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:37[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:03:37[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:28263 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41098 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51723 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50898 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:45[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:03:45[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:26143 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26145 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11446 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52352 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:03:53[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:03:53[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:27503 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5640 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54423 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16814 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:01[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:04:01[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:52974 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56532 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56535 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40226 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:09[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:04:09[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:53597 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7189 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7982 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8596 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8377 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24235 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24238 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28085 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12888 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:04:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:23662 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46441 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28673 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:36[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:04:36[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:30484 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33516 - "GET /api/disasm/disassembly?offset=0&limit=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2954 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2967 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:44[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:04:44[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:38861 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38418 - "GET /api/disasm/symbols?offset=0&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5931 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5536 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:04:52[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:04:52[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:52923 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16815 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16640 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44697 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:01[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:05:01[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:59656 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1288 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20681 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17856 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17858 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53590 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11167 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3500 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24573 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16953 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25991 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:38111 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6781 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:27[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded tiny.bin: arch=arm, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:05:27[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded tiny.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:6783 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26119 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21406 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:34[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded min.elf: arch=arm, bits=32, symbols=0, disasm=1[0m
+[32m2026-04-20 02:05:34[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded min.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:19709 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23633 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33152 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:40[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:05:40[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:44429 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23751 - "GET /api/disasm/disassembly?offset=999999&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8089 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8091 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:48[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:05:48[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:36366 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59355 - "GET /api/disasm/disassembly?limit=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34134 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24904 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:05:56[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:05:56[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:46526 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3886 - "GET /api/disasm/disassembly?offset=-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1208 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48987 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:06:04[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:06:04[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:54532 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31999 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32971 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3230 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:06:13[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:06:13[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:49712 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42965 - "GET /api/disasm/resolve?address=0x0800010F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42071 - "GET /api/disasm/resolve?address=0x08000110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53005 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10326 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:06:23[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:06:23[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:29221 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17608 - "GET /api/disasm/resolve?address=0xFFFFFFFF HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23033 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36146 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36150 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3231 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45327 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14295 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:37026 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57261 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27826 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:56838 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17728 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17730 - "GET /api/disasm/resolve?address=not_a_hex HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:6027 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16379 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29102 - "POST /api/disasm/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:52965 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8284 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54228 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:8011 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8041 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8043 - "POST /api/disasm/upload HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\applications.py", line 1159, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\api\disasm_router.py", line 49, in upload_binary
+    meta = disasm_service.load_binary(data, filename, arch=arch, base_addr=base)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 161, in load_binary
+    elf_info = self._parse_elf(data)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 467, in _parse_elf
+    sh_name = struct.unpack(f"{endian}I", data[sh_offset:sh_offset+4])[0]
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: unpack requires a buffer of 4 bytes
+INFO:     127.0.0.1:54017 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55547 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:07:14[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:07:14[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:5531 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35901 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4659 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2290 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44480 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3549 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3557 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:07:29[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded first.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:07:29[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded first.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:44175 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:07:31[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded second.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:07:31[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded second.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:32358 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27012 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:07:55[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:07:55[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:1681 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20622 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59657 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28988 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:54560 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37946 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:07[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:08:07[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:10239 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15919 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15922 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:14[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:08:14[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:26213 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30711 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2178 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:20[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:08:20[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:12725 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2522 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50106 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:26[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:08:26[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:3922 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56115 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56117 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1699 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:34[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:08:34[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:27860 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7800 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2759 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14422 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:42[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:08:42[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:12364 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7475 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26634 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26636 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:51[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:08:51[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:43050 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31344 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3715 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47344 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:08:59[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:08:59[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:7127 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24535 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51344 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51877 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:07[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:09:07[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:51879 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36004 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2013 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18892 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:15[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:09:15[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:49236 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42916 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58450 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23431 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:23[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:09:23[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:27747 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30628 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30160 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20088 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:32[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:09:32[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:45222 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45224 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17615 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9486 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1192 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2286 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30799 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26910 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3974 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54527 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:52[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:09:52[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:54530 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40772 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14655 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:09:58[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:09:58[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:22537 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4082 - "GET /api/disasm/disassembly?offset=0&limit=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1936 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54075 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:10:06[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:10:06[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:39717 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3099 - "GET /api/disasm/symbols?offset=0&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3107 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36564 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:10:15[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:10:15[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:46268 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36332 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20056 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6306 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:10:23[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:10:23[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:16877 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12515 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28585 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28587 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48555 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4636 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59920 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8111 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27311 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1503 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26550 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:9394 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9396 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:10:50[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded tiny.bin: arch=arm, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:10:50[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded tiny.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:47915 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25883 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1932 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:10:56[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded min.elf: arch=arm, bits=32, symbols=0, disasm=1[0m
+[32m2026-04-20 02:10:56[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded min.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:46467 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19127 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2342 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:02[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:11:02[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:21583 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45376 - "GET /api/disasm/disassembly?offset=999999&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32247 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17058 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:10[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:11:10[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:18864 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45434 - "GET /api/disasm/disassembly?limit=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23478 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19938 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:18[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:11:18[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:31529 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26162 - "GET /api/disasm/disassembly?offset=-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45523 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20889 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:26[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:11:26[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:3318 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37572 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19949 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19952 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:35[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:11:35[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:39674 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24777 - "GET /api/disasm/resolve?address=0x0800010F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26300 - "GET /api/disasm/resolve?address=0x08000110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43472 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50171 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:11:45[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:11:45[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:3569 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27690 - "GET /api/disasm/resolve?address=0xFFFFFFFF HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54680 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54683 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27541 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52487 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17661 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20071 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:3351 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16257 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37138 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:1185 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45138 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40600 - "GET /api/disasm/resolve?address=not_a_hex HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:58388 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25036 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52184 - "POST /api/disasm/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:4548 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11268 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4822 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:33131 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33133 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55990 - "POST /api/disasm/upload HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\applications.py", line 1159, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\api\disasm_router.py", line 49, in upload_binary
+    meta = disasm_service.load_binary(data, filename, arch=arch, base_addr=base)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 161, in load_binary
+    elf_info = self._parse_elf(data)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 467, in _parse_elf
+    sh_name = struct.unpack(f"{endian}I", data[sh_offset:sh_offset+4])[0]
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: unpack requires a buffer of 4 bytes
+INFO:     127.0.0.1:39578 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27685 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:12:36[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:12:36[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:51873 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30563 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36136 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25737 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50074 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50076 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31390 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:12:51[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded first.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:12:51[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded first.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:43983 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:12:53[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded second.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:12:53[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded second.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:2379 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51577 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:10[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:13:10[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:32808 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14257 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39716 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6655 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:7831 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58933 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:22[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:13:22[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:58935 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1410 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27735 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:29[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:13:29[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:45521 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7281 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14818 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:35[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:13:35[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:57832 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11061 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50989 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:41[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:13:41[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:50991 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31473 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6499 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20710 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:49[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:13:49[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:21687 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28599 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7264 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4289 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:13:57[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:13:57[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:16437 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16439 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53195 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30668 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:05[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:14:05[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:42750 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13674 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37329 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24330 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:14[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:14:14[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:21163 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4728 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4730 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44019 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:22[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:14:22[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:34535 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43938 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47158 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15759 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:14:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:43730 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28026 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56652 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5533 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:38[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:14:38[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:9349 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16008 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10140 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10142 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:14:46[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:14:46[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:3164 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11729 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51392 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28876 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2217 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1131 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33383 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1657 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1659 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24107 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:07[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:15:07[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:18028 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43220 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:18[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:15:18[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:4697 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7180 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31409 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3231 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:43003 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16809 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:15:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:16814 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2931 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53382 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:36[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:15:36[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:10350 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49671 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54276 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:42[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:15:42[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:59247 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16216 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2252 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:48[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:15:48[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:2254 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1063 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28102 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20126 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:15:57[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:15:57[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:54510 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49298 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11351 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24789 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:05[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:16:05[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:33944 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33946 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24439 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19082 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:13[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:16:13[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:13020 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48727 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3485 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48269 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:21[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:16:21[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:43271 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6094 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6096 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18622 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:29[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:16:29[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:8421 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29491 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17555 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42837 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:38[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:16:38[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:25579 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12527 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58065 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58071 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:46[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:16:46[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:39360 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26128 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36944 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36947 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:16:54[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:16:54[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:6012 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52127 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20133 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38141 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40378 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23026 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35758 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38440 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38442 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28899 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:17:15[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:17:15[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:14030 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10267 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:17:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:17:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:34144 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3063 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4358 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35954 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:26254 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48599 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:17:43[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:17:43[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:14156 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4396 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9454 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:17:49[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:17:49[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:3167 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57436 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6003 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:17:55[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:17:55[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:32596 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34373 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28827 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:01[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:18:01[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:49897 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37570 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37572 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5246 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:09[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:18:09[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:26640 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51616 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7202 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34125 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:18[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:18:18[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:58700 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29569 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23371 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23373 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:26[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:18:26[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:3191 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4481 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27878 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35351 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:34[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:18:34[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:25967 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7196 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7282 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39373 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:42[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:18:42[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:39376 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16941 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1037 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22122 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:50[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:18:50[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:32157 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43785 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38984 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30339 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:18:59[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:18:59[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:19714 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19716 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32579 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15400 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:07[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:19:07[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:30499 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43155 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15593 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49955 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5580 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5759 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5761 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31341 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9471 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23418 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:27[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:19:27[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:37914 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43956 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15444 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:33[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:19:33[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:32658 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55258 - "GET /api/disasm/disassembly?offset=0&limit=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42825 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6565 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:42[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:19:42[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:39920 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17971 - "GET /api/disasm/symbols?offset=0&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17973 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9319 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:50[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:19:50[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:6906 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44737 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23557 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6982 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:19:58[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:19:58[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:41291 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19650 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31354 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:31357 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27795 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41472 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10899 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39678 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5147 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35389 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2813 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:25481 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25483 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:20:25[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded tiny.bin: arch=arm, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:20:25[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded tiny.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:52628 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50825 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:20:43[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:20:43[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:31989 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56769 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5184 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5777 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:29952 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38483 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:20:55[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:20:55[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:49701 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11221 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11223 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:01[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:21:01[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:38691 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25469 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51444 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:07[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:21:07[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:4845 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5133 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13916 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:13[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:21:13[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:6081 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15805 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15807 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4983 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:21[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:21:21[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:51449 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6187 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13625 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35704 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:21:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:11776 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32334 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19884 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19889 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:38[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:21:38[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:56654 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56518 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5316 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:21:54[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:21:54[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:5319 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59750 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1719 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27624 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:19359 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23795 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:06[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:22:06[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:22768 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:14877 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34547 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:12[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:22:12[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:34550 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22524 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29013 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:18[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:22:18[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:51869 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47662 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4842 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:25[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:22:25[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:26065 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33375 - "GET /api/disasm/disassembly?limit=5 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21494 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21496 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:33[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded sym.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:22:33[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded sym.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:11363 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6879 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10614 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50015 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:41[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:22:41[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:48597 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48912 - "GET /api/disasm/symbols?query=main HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3220 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3232 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:49[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:22:49[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:2899 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49714 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5321 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2034 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:22:57[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:22:57[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:2042 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21254 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39291 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48443 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:06[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:23:06[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:21721 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42122 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43317 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2915 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:14[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.bin: arch=x86, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:23:14[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:45513 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45524 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57224 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37453 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:22[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:23:22[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:6476 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45265 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13617 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2240 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:30[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:23:30[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:16761 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2466 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2468 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:26386 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43577 - "GET /api/disasm/disassembly HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45100 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:33376 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48180 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54358 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2387 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:51[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:23:51[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:7702 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7705 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40497 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:23:57[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:23:57[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:55554 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41647 - "GET /api/disasm/disassembly?offset=0&limit=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:17034 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59977 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:24:05[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:24:05[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:53667 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30525 - "GET /api/disasm/symbols?offset=0&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5140 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5143 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:24:13[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:24:13[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:10578 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55784 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3168 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38064 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:24:21[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:24:21[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:2082 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23570 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6242 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22638 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41397 - "GET /api/disasm/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55325 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2466 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44776 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44780 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45044 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1462 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:1264 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15943 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:24:48[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded tiny.bin: arch=arm, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:24:48[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded tiny.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:51383 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:23220 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8766 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:24:54[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded min.elf: arch=arm, bits=32, symbols=0, disasm=1[0m
+[32m2026-04-20 02:24:54[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded min.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:58530 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58532 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21863 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:00[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:25:00[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:7139 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3024 - "GET /api/disasm/disassembly?offset=999999&limit=10 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3068 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5554 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:09[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:25:09[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:54188 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:15457 - "GET /api/disasm/disassembly?limit=0 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38455 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38457 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:17[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:25:17[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:40336 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56590 - "GET /api/disasm/disassembly?offset=-1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30227 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18484 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:25[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:25:25[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:33202 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22669 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43550 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36725 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:33[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=2, disasm=5[0m
+[32m2026-04-20 02:25:33[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=2[0m
+INFO:     127.0.0.1:36727 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:21699 - "GET /api/disasm/resolve?address=0x0800010F HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2404 - "GET /api/disasm/resolve?address=0x08000110 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:18667 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30890 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:25:44[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:25:44[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:12488 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:25908 - "GET /api/disasm/resolve?address=0xFFFFFFFF HTTP/1.1" 200 OK
+INFO:     127.0.0.1:27792 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55764 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55767 - "GET /api/disasm/resolve?address=0x08000100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10296 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51582 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10974 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:32480 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:1184 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59731 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:28897 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47216 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7032 - "GET /api/disasm/resolve?address=not_a_hex HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59009 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4401 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:34727 - "POST /api/disasm/upload HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:34729 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:24807 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4528 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:1397 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3199 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57588 - "POST /api/disasm/upload HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\protocols\http\h11_impl.py", line 410, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self.scope, self.receive, self.send
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\uvicorn\middleware\proxy_headers.py", line 60, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\applications.py", line 1159, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\applications.py", line 90, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 186, in __call__
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 660, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 680, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\routing.py", line 276, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 134, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 120, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 674, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\winel\AppData\Roaming\Python\Python313\site-packages\fastapi\routing.py", line 328, in run_endpoint_function
+    return await dependant.call(**values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\api\disasm_router.py", line 49, in upload_binary
+    meta = disasm_service.load_binary(data, filename, arch=arch, base_addr=base)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 161, in load_binary
+    elf_info = self._parse_elf(data)
+  File "F:\CodingProjects\电源监控日志实时分析系统\backend\src\services\disasm_service.py", line 467, in _parse_elf
+    sh_name = struct.unpack(f"{endian}I", data[sh_offset:sh_offset+4])[0]
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+struct.error: unpack requires a buffer of 4 bytes
+INFO:     127.0.0.1:50296 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42507 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:26:35[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:26:35[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:53767 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53772 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29640 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46527 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49203 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47915 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:48247 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:26:49[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded first.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:26:49[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded first.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:14667 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:26:51[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded second.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:26:51[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded second.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:48859 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29051 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29053 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32061 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:26:59[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:26:59[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:31703 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35117 - "GET /api/disasm/disassembly?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47641 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42224 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:08[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:27:08[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:49798 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5557 - "GET /api/disasm/disassembly?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9511 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9513 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:16[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:27:16[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:46507 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19159 - "GET /api/disasm/symbols HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45820 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12206 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:24[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:27:24[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:19198 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40686 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22661 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:39978 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:32[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:27:32[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:39983 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50715 - "GET /api/disasm/disassembly?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:11045 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53090 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:40[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:27:40[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:6068 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:8542 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16049 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:45000 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:49[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:27:49[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:30521 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:30523 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:22056 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:27:55[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:27:55[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:10043 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35513 - "GET /api/disasm/disassembly?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:35515 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:40901 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:03[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:28:03[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:42931 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59586 - "GET /api/disasm/resolve?address=0x08000104 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:12011 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:13569 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:11[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:28:11[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:5784 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:19454 - "POST /api/disasm/analyze HTTP/1.1" 200 OK
+INFO:     127.0.0.1:32988 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:43454 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:19[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded ../../../etc/passwd.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:28:19[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded ../../../etc/passwd.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:35762 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55019 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:46734 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:25[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:28:25[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:33613 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58880 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:2910 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:10621 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:3406 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3416 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:38[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=1, disasm=5[0m
+[32m2026-04-20 02:28:38[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=1[0m
+INFO:     127.0.0.1:6947 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29662 - "GET /api/disasm/symbols?query=%3Cscript%3Ealert(1)%3C/script%3E HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59017 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3460 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:46[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded arm32.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:28:46[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded arm32.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:4525 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44078 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:20067 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6941 - "POST /api/disasm/upload HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:6943 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41740 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:28:58[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded riscv32.elf: arch=riscv, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:28:58[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded riscv32.elf: arch=riscv, symbols=0[0m
+INFO:     127.0.0.1:58693 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58180 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:47782 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:04[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded x86.elf: arch=x86, bits=32, symbols=0, disasm=0[0m
+[32m2026-04-20 02:29:04[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded x86.elf: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:20475 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3683 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:9657 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:11[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw_arm.bin: arch=arm, bits=32, symbols=0, disasm=1[0m
+[32m2026-04-20 02:29:11[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw_arm.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:7028 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7031 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:5472 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:17[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded raw_x86.bin: arch=x86, bits=32, symbols=0, disasm=3[0m
+[32m2026-04-20 02:29:17[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded raw_x86.bin: arch=x86, symbols=0[0m
+INFO:     127.0.0.1:21549 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:38282 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3795 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:23[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.elf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:29:23[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.elf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:34249 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:25[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.bin: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:29:25[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.bin: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:13808 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:27[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.axf: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:29:27[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.axf: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:32213 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:29[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.out: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:29:29[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.out: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:11154 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+[32m2026-04-20 02:29:31[0m | [1mINFO    [0m | [36msrc.services.disasm_service[0m:[36mload_binary[0m — [1m[Disasm] Loaded test.o: arch=arm, bits=32, symbols=0, disasm=5[0m
+[32m2026-04-20 02:29:31[0m | [1mINFO    [0m | [36msrc.api.disasm_router[0m:[36mupload_binary[0m — [1m[API/disasm] Uploaded test.o: arch=arm, symbols=0[0m
+INFO:     127.0.0.1:21926 - "POST /api/disasm/upload HTTP/1.1" 200 OK
+INFO:     127.0.0.1:41037 - "DELETE /api/disasm/clear HTTP/1.1" 200 OK
+INFO:     127.0.0.1:6213 - "GET /api/health HTTP/1.1" 200 OK

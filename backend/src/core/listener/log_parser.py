@@ -4,11 +4,11 @@ Parse raw log file lines into structured LogEntry objects.
 Extracts timestamp, log level, and message from each line.
 """
 
+import contextlib
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
 
-from ...constants import CRITICAL_KEYWORDS, CURRENT_RE, TEMP_RE, VOLTAGE_RE, WARNING_KEYWORDS
+from ...constants import CURRENT_RE, TEMP_RE, VOLTAGE_RE, WARNING_KEYWORDS
 from ...schemas.log import LogEntry, MetricsData
 from ...utils.logger import logger
 
@@ -50,12 +50,12 @@ def parse_log_file(file_path: Path) -> list[LogEntry]:
     return entries
 
 
-def _parse_line(line: str) -> tuple[Optional[datetime], str, str]:
+def _parse_line(line: str) -> tuple[datetime | None, str, str]:
     """Extract timestamp, level, and message from a single log line."""
     import re
 
     # ── Timestamp extraction ────────────────────────────────────────────────
-    timestamp: Optional[datetime] = None
+    timestamp: datetime | None = None
     remaining = line
 
     # ISO format: 2026-04-15T00:00:00 or 2026/04/15 00:00:00
@@ -100,10 +100,8 @@ def extract_metrics(entries: list[LogEntry]) -> list[MetricsData]:
         for pat, key in [(VOLTAGE_RE, "voltage_mv"), (CURRENT_RE, "current_ma"), (TEMP_RE, "temp_c")]:
             m = pat.search(entry.message)
             if m:
-                try:
+                with contextlib.suppress(ValueError):
                     dm[key] = float(m.group(1))
-                except ValueError:
-                    pass
 
     for device, dm in device_metrics.items():
         if any(v is not None for v in dm.values()):

@@ -9,16 +9,14 @@ from __future__ import annotations
 
 import re
 import time
-import asyncio
 from dataclasses import dataclass, field
-from typing import Optional
 
 import httpx
 
-from ..schemas.alert import AIDiagnosis
 from ..config import settings
-from ..core.ai_engine.prompt_builder import build_log_analysis_prompt
 from ..core.ai_engine.cot_parser import parse_ai_response
+from ..core.ai_engine.prompt_builder import build_log_analysis_prompt
+from ..schemas.alert import AIDiagnosis
 from ..utils.logger import logger
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -91,14 +89,14 @@ class LogParser:
 
     def parse(self, logs: str | list[str]) -> LogParseResult:
         if isinstance(logs, str):
-            lines = [l.strip() for l in logs.strip().splitlines() if l.strip()]
+            lines = [ln.strip() for ln in logs.strip().splitlines() if ln.strip()]
         else:
-            lines = [l.strip() for l in logs if l.strip()]
+            lines = [ln.strip() for ln in logs if ln.strip()]
 
         raw_text = "\n".join(lines)
 
-        crit_cnt = sum(1 for l in lines if any(k in l.lower() for k in self.CRITICAL_KW))
-        warn_cnt = sum(1 for l in lines if any(k in l.lower() for k in self.WARNING_KW))
+        crit_cnt = sum(1 for ln in lines if any(k in ln.lower() for k in self.CRITICAL_KW))
+        warn_cnt = sum(1 for ln in lines if any(k in ln.lower() for k in self.WARNING_KW))
         severity = "CRITICAL" if crit_cnt > 0 else "WARNING" if warn_cnt > 0 else "INFO"
 
         et_pat = re.compile(
@@ -239,7 +237,7 @@ class LLMAnalysisService:
             resp.raise_for_status()
             data = resp.json()
         raw = data["choices"][0]["message"]["content"]
-        diagnosis = parse_ai_response(raw, ctx.error_type)
+        diagnosis = parse_ai_response(raw, parse_result.error_type)
         logger.info(f"[LLMLog] Done in {data.get('usage', {}).get('total_tokens', '?')} tokens")
         return diagnosis
 

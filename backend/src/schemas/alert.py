@@ -6,13 +6,12 @@ Alert-level enums and structured AI diagnosis / alert payload models.
 from __future__ import annotations
 
 from datetime import UTC, datetime
-from enum import Enum
-from typing import Optional
+from enum import StrEnum
 
 from pydantic import BaseModel, Field
 
 
-class AlertLevel(str, Enum):
+class AlertLevel(StrEnum):
     """Alert severity level."""
 
     CRITICAL = "CRITICAL"
@@ -26,7 +25,7 @@ class AIDiagnosis(BaseModel):
     error_type: str = Field(..., description="Type of error: Oops/Panic/Segfault/...")
     root_cause: str = Field(default="", description="AI-inferred root cause summary")
     ai_suggestion: str = Field(default="", description="CoT reasoning / fix steps")
-    code_patch: Optional[str] = Field(default=None, description="Raw unified diff patch content, or None")
+    code_patch: str | None = Field(default=None, description="Raw unified diff patch content, or None")
     model_used: str = Field(default="deepseek-chat")
     tokens_used: int = Field(default=0)
 
@@ -40,5 +39,5 @@ class AlertPayload(BaseModel):
     level: AlertLevel
     summary: str = Field(..., description="Short human-readable alert summary")
     ai_suggestion: str = Field(default="")
-    patch_content: Optional[str] = Field(default=None)
+    patch_content: str | None = Field(default=None)
     timestamp: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())

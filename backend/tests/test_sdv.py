@@ -19,11 +19,7 @@ from __future__ import annotations
 
 import struct
 import time
-import io
-import zipfile
-from typing import Optional
 
-import pytest
 import requests
 
 # ═══════════════════════════════════════════════════════════════════════════════

@@ -6,8 +6,7 @@ Used by HTTP API routes when WebSocket data is not available.
 from __future__ import annotations
 
 import asyncio
-from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from dataclasses import dataclass
 from typing import Any
 
 from ..config import settings

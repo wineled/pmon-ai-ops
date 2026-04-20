@@ -1,7 +1,9 @@
 """CFG Service Quick Tests"""
 import sys
+
 sys.path.insert(0, r'F:\CodingProjects\电源监控日志实时分析系统\backend')
 from src.services.cfg_service import cfg_from_instructions, cfg_to_dict
+
 
 def hx(val):
     return hex(val)

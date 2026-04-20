@@ -7,12 +7,10 @@ Allows concurrent connect/disconnect and broadcast operations.
 from __future__ import annotations
 
 import asyncio
-from typing import TYPE_CHECKING, Union
+from typing import TYPE_CHECKING
 
 from fastapi import WebSocket
 
-from ...schemas.alert import AlertPayload
-from ...schemas.log import MetricsData
 from ...schemas.ws_message import WSPayload
 from ...utils.logger import logger
 

@@ -6,10 +6,8 @@ Provides minimal ELF binary generators and service fixtures.
 from __future__ import annotations
 
 import struct
-from typing import Generator
 
 import pytest
-
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # ELF Binary Generators
@@ -22,12 +20,12 @@ def make_minimal_arm32_elf(
 ) -> bytes:
     """
     Create a minimal 32-bit ARM ELF binary.
-    
+
     Args:
         entry: Entry point address
         code: Raw ARM instructions (default: simple push/mov/pop)
         symbols: List of (name, address, size) for function symbols
-    
+
     Returns:
         Complete ELF binary as bytes
     """
@@ -38,21 +36,21 @@ def make_minimal_arm32_elf(
             0x00, 0x40, 0xa0, 0xe3,  # mov r4, #0
             0x10, 0x40, 0xbd, 0xe8,  # pop {r4, pc}
         ])
-    
+
     has_symbols = symbols is not None and len(symbols) > 0
-    
+
     # ── Calculate all offsets first ──────────────────────────────────────────
     elf_header_size = 52
-    
+
     # .text section: right after ELF header
     text_offset = elf_header_size
     text_size = len(code)
-    
+
     # Pad to 0x100 for shstrtab
     shstrtab_offset = 0x100
     shstrtab = b"\x00.text\x00.shstrtab\x00.symtab\x00.strtab\x00"
     shstrtab_size = len(shstrtab)
-    
+
     # Symbol table and string table
     symtab_offset = 0
     symtab_size = 0
@@ -60,38 +58,38 @@ def make_minimal_arm32_elf(
     strtab_size = 0
     symtab_data = b""
     strtab_data = b""
-    
+
     if has_symbols:
         # Build symbol table and string table
         strtab_data = b"\x00"
         symtab_parts = []
-        
+
         # NULL symbol
         symtab_parts.append(struct.pack("<IIIBBH", 0, 0, 0, 0, 0, 0))
-        
+
         for name, addr, size in symbols:
             st_name = len(strtab_data)
             strtab_data += name.encode() + b"\x00"
             # st_info = (STB_GLOBAL << 4) | STT_FUNC = (1 << 4) | 2 = 0x12
             symtab_parts.append(struct.pack("<IIIBBH", st_name, addr, size, 0x12, 0, 1))
-        
+
         symtab_data = b"".join(symtab_parts)
         symtab_size = len(symtab_data)
         strtab_size = len(strtab_data)
-        
+
         symtab_offset = shstrtab_offset + shstrtab_size
         strtab_offset = symtab_offset + symtab_size
-    
+
     # Section header table
     sht_offset = shstrtab_offset + shstrtab_size
     if has_symbols:
         sht_offset = strtab_offset + strtab_size
     sht_offset = (sht_offset + 3) & ~3  # Align to 4
-    
+
     # Number of sections
     shnum = 5 if has_symbols else 3
     shstrndx = 2  # .shstrtab is always section 2
-    
+
     # ── Build ELF header ─────────────────────────────────────────────────────
     elf_header = struct.pack(
         "<16sHHIIIIIHHHHHH",
@@ -110,11 +108,11 @@ def make_minimal_arm32_elf(
         shnum,          # e_shnum
         shstrndx,       # e_shstrndx
     )
-    
+
     # ── Build section headers ────────────────────────────────────────────────
     # [0] NULL section
     sh_null = struct.pack("<IIIIIIIIII", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    
+
     # [1] .text section
     sh_text = struct.pack(
         "<IIIIIIIIII",
@@ -126,7 +124,7 @@ def make_minimal_arm32_elf(
         text_size,      # sh_size
         0, 0, 4, 0,     # sh_link, sh_info, sh_addralign, sh_entsize
     )
-    
+
     # [2] .shstrtab section
     sh_shstrtab = struct.pack(
         "<IIIIIIIIII",
@@ -137,36 +135,36 @@ def make_minimal_arm32_elf(
         shstrtab_size,  # sh_size
         0, 0, 1, 0,     # sh_link, sh_info, sh_addralign, sh_entsize
     )
-    
+
     # ── Build the binary ─────────────────────────────────────────────────────
     binary = bytearray()
     binary.extend(elf_header)       # 0x00 - 0x34
     binary.extend(code)             # 0x34 - ...
-    
+
     # Pad to shstrtab_offset
     while len(binary) < shstrtab_offset:
         binary.append(0)
     binary.extend(shstrtab)
-    
+
     # Add symbol table and string table if present
     if has_symbols:
         while len(binary) < symtab_offset:
             binary.append(0)
         binary.extend(symtab_data)
-        
+
         while len(binary) < strtab_offset:
             binary.append(0)
         binary.extend(strtab_data)
-    
+
     # Pad to sht_offset
     while len(binary) < sht_offset:
         binary.append(0)
-    
+
     # Section header table
     binary.extend(sh_null)
     binary.extend(sh_text)
     binary.extend(sh_shstrtab)
-    
+
     # Add symbol table section headers if present
     if has_symbols:
         sh_symtab = struct.pack(
@@ -182,7 +180,7 @@ def make_minimal_arm32_elf(
             16,             # sh_entsize: sizeof(Elf32_Sym)
         )
         binary.extend(sh_symtab)
-        
+
         sh_strtab = struct.pack(
             "<IIIIIIIIII",
             25,             # sh_name: ".strtab" offset
@@ -193,7 +191,7 @@ def make_minimal_arm32_elf(
             0, 0, 1, 0,     # sh_link, sh_info, sh_addralign, sh_entsize
         )
         binary.extend(sh_strtab)
-    
+
     return bytes(binary)
 
 
@@ -206,12 +204,12 @@ def make_minimal_arm64_elf(entry: int = 0x400000) -> bytes:
         0xfd, 0x7b, 0xc1, 0xa8,  # ldp x29, x30, [sp], #16
         0xc0, 0x03, 0x5f, 0xd6,  # ret
     ])
-    
+
     shstrtab = b"\x00.text\x00.shstrtab\x00"
     shstrtab_offset = 0x100
     sht_offset = shstrtab_offset + len(shstrtab)
     sht_offset = (sht_offset + 7) & ~7  # Align to 8
-    
+
     # 64-bit ELF header (64 bytes)
     elf_header = struct.pack(
         "<16sHHIQQQIHHHHHH",
@@ -229,10 +227,10 @@ def make_minimal_arm64_elf(entry: int = 0x400000) -> bytes:
         3,              # e_shnum
         2,              # e_shstrndx
     )
-    
+
     # 64-bit section headers (64 bytes each)
     sh_null = struct.pack("<IIQQQQIIQQ", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    
+
     sh_text = struct.pack(
         "<IIQQQQIIQQ",
         1,              # sh_name
@@ -244,12 +242,12 @@ def make_minimal_arm64_elf(entry: int = 0x400000) -> bytes:
         0, 0,           # sh_link, sh_info
         4, 0,           # sh_addralign, sh_entsize
     )
-    
+
     sh_shstrtab = struct.pack(
         "<IIQQQQIIQQ",
         7, 3, 0, 0, shstrtab_offset, len(shstrtab), 0, 0, 1, 0,
     )
-    
+
     binary = bytearray()
     binary.extend(elf_header)
     binary.extend(code)
@@ -261,7 +259,7 @@ def make_minimal_arm64_elf(entry: int = 0x400000) -> bytes:
     binary.extend(sh_null)
     binary.extend(sh_text)
     binary.extend(sh_shstrtab)
-    
+
     return bytes(binary)
 
 
@@ -272,11 +270,11 @@ def make_minimal_riscv_elf(entry: int = 0x80000000) -> bytes:
         0x01, 0x71,      # addi sp, sp, -16 (compressed)
         0x82, 0x80,      # ret (compressed)
     ])
-    
+
     shstrtab = b"\x00.text\x00.shstrtab\x00"
     shstrtab_offset = 0x100
     sht_offset = (shstrtab_offset + len(shstrtab) + 3) & ~3
-    
+
     elf_header = struct.pack(
         "<16sHHIIIIIHHHHHH",
         b"\x7fELF\x01\x01\x01\x00" + b"\x00" * 8,
@@ -284,11 +282,11 @@ def make_minimal_riscv_elf(entry: int = 0x80000000) -> bytes:
         243,            # EM_RISCV
         1, entry, 0, sht_offset, 0, 52, 0, 0, 40, 3, 2,
     )
-    
+
     sh_null = struct.pack("<IIIIIIIIII", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
     sh_text = struct.pack("<IIIIIIIIII", 1, 1, 6, entry, 52, len(code), 0, 0, 2, 0)
     sh_shstrtab = struct.pack("<IIIIIIIIII", 7, 3, 0, 0, shstrtab_offset, len(shstrtab), 0, 0, 1, 0)
-    
+
     binary = bytearray()
     binary.extend(elf_header)
     binary.extend(code)
@@ -300,7 +298,7 @@ def make_minimal_riscv_elf(entry: int = 0x80000000) -> bytes:
     binary.extend(sh_null)
     binary.extend(sh_text)
     binary.extend(sh_shstrtab)
-    
+
     return bytes(binary)
 
 

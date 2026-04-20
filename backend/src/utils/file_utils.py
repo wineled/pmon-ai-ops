@@ -49,7 +49,7 @@ async def read_file_lines(path: Path) -> list[str]:
     try:
         import aiofiles
 
-        async with aiofiles.open(path, "r", encoding="utf-8", errors="replace") as f:
+        async with aiofiles.open(path, encoding="utf-8", errors="replace") as f:
             content = await f.read()
         return content.splitlines()
     except Exception as exc:

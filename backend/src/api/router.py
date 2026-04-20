@@ -4,6 +4,7 @@
 from fastapi import APIRouter, Request
 
 from ..services.health import full_health_check
+from ..services.memory_service import memory_service
 from ..utils.logger import logger
 
 api_router = APIRouter(prefix="/api")
@@ -32,8 +33,6 @@ async def metrics(request: Request) -> dict:
         "queue_size": request.app.state.queue.qsize(),
     }
 
-
-from ..services.memory_service import memory_service
 
 @api_router.get("/logs")
 async def get_logs() -> dict:

@@ -8,10 +8,6 @@ Output: structured CFG with basic blocks and control flow edges
 from __future__ import annotations
 
 from dataclasses import dataclass, field
-from typing import Optional
-import struct
-
-from capstone import Cs, CS_ARCH_ARM, CS_ARCH_ARM64, CS_ARCH_RISCV, CS_ARCH_X86, CS_MODE_ARM, CS_MODE_THUMB, CS_MODE_32, CS_MODE_64, CS_MODE_RISCV32, CS_MODE_RISCV64
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # Data Models
@@ -112,45 +108,45 @@ COND_BRANCH_X86 = {"je", "jne", "jl", "jle", "jg", "jge", "jb", "jbe", "ja", "ja
 class CFGGenerator:
     """
     Generate a Control Flow Graph from a list of disassembly instructions.
-    
+
     Algorithm:
     1. Linear scan to identify basic block boundaries
     2. Label every instruction address as belonging to a block
     3. Connect blocks with CFG edges
     4. Classify edges by type
     """
-    
+
     def __init__(self, function_name: str, instructions: list[CFGInstruction], arch: str = "arm"):
         self.function_name = function_name
         self.instructions = instructions  # sorted by address
         self.arch = arch.lower()
-        
+
         # Index: address -> instruction
         self.addr_to_insn: dict[int, CFGInstruction] = {
             insn.address: insn for insn in instructions
         }
-        
+
         # Index: address -> block index
         self.addr_to_block: dict[int, int] = {}
-        
+
         # Basic blocks
         self.blocks: list[BasicBlock] = []
-        
+
         # Edges
         self.edges: list[CFGEdge] = []
-        
+
         # Block start addresses (leaders)
         self.leaders: set[int] = {instructions[0].address} if instructions else set()
-        
+
     def _is_return(self, insn: CFGInstruction) -> bool:
         """Check if instruction is a return."""
         mnemonic = insn.mnemonic.lower().strip()
         op = insn.op_str.lower().strip()
-        
+
         # Exact matches
         if mnemonic == "ret":
             return True
-        
+
         # ARM: bx lr, pop {pc}, mov pc, lr
         if self.arch in ("arm", "thumb"):
             if mnemonic == "bx" and "lr" in op:
@@ -161,64 +157,58 @@ class CFGGenerator:
                 return True
             if mnemonic == "ldr" and "pc" in op:
                 return True
-        
+
         # RISC-V: jr ra, ret
-        if self.arch == "riscv":
-            if mnemonic == "jr" and "ra" in op:
-                return True
-        
+        if self.arch == "riscv" and mnemonic == "jr" and "ra" in op:
+            return True
+
         # x86: ret, retn, retf, iret
         if self.arch in ("x86", "x86_64"):
             if mnemonic.startswith("ret"):
                 return True
             if mnemonic in ("iretd", "iretw", "iretf"):
                 return True
-        
+
         return False
-    
+
     def _is_call(self, insn: CFGInstruction) -> bool:
         """Check if instruction is a call."""
         mnemonic = insn.mnemonic.lower().strip()
-        
+
         if self.arch in ("arm", "thumb"):
             return mnemonic in ("bl", "blx", "blz")  # BLX can be both
-        
+
         if self.arch == "arm64":
             return mnemonic == "bl"
-        
+
         if self.arch == "riscv":
             return mnemonic in ("jal", "jalr")
-        
+
         if self.arch in ("x86", "x86_64"):
             return mnemonic == "call"
-        
+
         return False
-    
+
     def _is_branch(self, insn: CFGInstruction) -> bool:
         """Check if instruction is a branch/jump."""
         mnemonic = insn.mnemonic.lower().strip()
-        
+
         branch_set = BRANCH_MNEMONICS.get(self.arch, set())
         if mnemonic in branch_set:
             return True
-        
+
         # arm64 dot-notation: b.eq, b.ne, etc.
-        if self.arch in ("arm", "arm64", "thumb"):
-            if mnemonic.startswith("b."):
-                return True
-        
+        if self.arch in ("arm", "arm64", "thumb") and mnemonic.startswith("b."):
+            return True
+
         # x86: any instruction starting with 'j' (jmp, je, jne, etc.)
-        if self.arch in ("x86", "x86_64"):
-            if mnemonic.startswith("j"):
-                return True
-        
-        return False
-    
+        return bool(self.arch in ("x86", "x86_64") and mnemonic.startswith("j"))
+
     def _is_conditional(self, insn: CFGInstruction) -> bool:
         """Check if branch is conditional."""
         mnemonic = insn.mnemonic.lower().strip()
-        op = insn.op_str.lower().strip()
-        
+        insn.op_str.lower().strip()
+
         if self.arch in ("arm", "thumb"):
             # ARM dot-notation: b.eq, b.ne, etc.
             if mnemonic.startswith("b."):
@@ -228,10 +218,8 @@ class CFGGenerator:
                 return True
             # Old-style conditional: beq, bne, blt, etc. (but NOT bl, b, bx, blx, bal)
             uncond = UNCOND_BRANCH.get(self.arch, set())
-            if mnemonic in BRANCH_MNEMONICS.get(self.arch, set()) and mnemonic not in uncond:
-                return True
-            return False
-        
+            return bool(mnemonic in BRANCH_MNEMONICS.get(self.arch, set()) and mnemonic not in uncond)
+
         if self.arch in ("x86", "x86_64"):
             # All 'j' except 'jmp' are conditional
             if mnemonic.startswith("j") and mnemonic != "jmp":
@@ -239,90 +227,82 @@ class CFGGenerator:
             # loop variants are conditional
             if mnemonic.startswith("loop"):
                 return True
-        
+
         if self.arch == "arm64":
             if mnemonic.startswith("b."):
                 return True
             if mnemonic.startswith("cbn") or mnemonic.startswith("tbn") or mnemonic.startswith("cbz"):
                 return True
-        
-        if self.arch == "riscv":
-            # All b* except jal/jalr are conditional branches
-            if mnemonic.startswith("b") and mnemonic not in ("bal",):
-                return True
-        
-        return False
-    
+
+        return self.arch == "riscv" and mnemonic.startswith("b") and mnemonic not in ("bal",)
+
     def _is_indirect(self, insn: CFGInstruction) -> bool:
         """Check if branch is indirect (target not known statically)."""
         mnemonic = insn.mnemonic.lower().strip()
         op = insn.op_str.strip()
-        
+
         # No immediate operand = indirect
         if not op or op == "":
             return True
-        
+
         # Immediate with register = indirect
-        if self.arch in ("arm", "thumb"):
-            if mnemonic in ("bx", "blr", "br"):
-                return True
-        
-        if self.arch == "arm64":
-            if mnemonic in ("br", "blr", "ret"):
-                return True
-        
-        if self.arch == "riscv":
-            if mnemonic in ("jr",):
-                return True
-        
+        if self.arch in ("arm", "thumb") and mnemonic in ("bx", "blr", "br"):
+            return True
+
+        if self.arch == "arm64" and mnemonic in ("br", "blr", "ret"):
+            return True
+
+        if self.arch == "riscv" and mnemonic in ("jr",):
+            return True
+
         if self.arch in ("x86", "x86_64"):
             if mnemonic == "jmp" and not op.startswith("0x"):
                 return True
             if mnemonic == "call" and not op.startswith("0x"):
                 return True
-        
+
         return False
-    
-    def _parse_jump_target(self, insn: CFGInstruction) -> Optional[int]:
+
+    def _parse_jump_target(self, insn: CFGInstruction) -> int | None:
         """Parse immediate jump target address from operand."""
         op = insn.op_str.strip()
         if not op:
             return None
-        
+
         # Hex address
         if op.startswith("0x") or op.startswith("0X"):
             try:
                 return int(op, 16)
             except ValueError:
                 pass
-        
+
         # Label name -> can't resolve statically
         return None
-    
+
     def _compute_block_boundaries(self) -> list:
         """
         Compute basic block boundaries.
-        
+
         Algorithm:
         1. Mark leaders: entry + targets of branches/jumps + fall-through after
            branches/jumps/returns.
         2. A block ends at: return, unconditional branch, conditional branch.
-        
+
         Returns:
             List of (start_addr, end_addr, start_idx, end_idx)
         """
         if not self.instructions:
             return []
-        
+
         # Mark leaders: addr -> reason
         leaders: dict[int, str] = {self.instructions[0].address: "entry"}
-        
+
         for i, insn in enumerate(self.instructions):
             is_return = self._is_return(insn)
             is_call = self._is_call(insn)
             is_branch = self._is_branch(insn) and not is_call
             is_cond = self._is_conditional(insn)
-            
+
             if is_return or is_branch or is_call:
                 # This instruction ends the current block.
                 # Fall-through (next instruction after branch/return/call) starts a new block.
@@ -330,7 +310,7 @@ class CFGGenerator:
                     next_addr = self.instructions[i + 1].address
                     if next_addr not in leaders:
                         leaders[next_addr] = "fallthrough"
-                
+
                 # For branches with a known target, the target is also a leader.
                 if not is_cond:
                     # Unconditional: only target is a leader (no fall-through)
@@ -342,17 +322,17 @@ class CFGGenerator:
                     target = self._parse_jump_target(insn)
                     if target is not None and target in self.addr_to_insn:
                         leaders[target] = "branch_target"
-        
+
         # Sort leaders
         leaders_sorted = sorted(leaders.keys())
         blocks = []
-        
+
         for i, leader_addr in enumerate(leaders_sorted):
             # Find start index in instructions
             start_idx = next(
                 j for j, insn in enumerate(self.instructions) if insn.address == leader_addr
             )
-            
+
             # Determine end: last instruction BEFORE the next leader.
             # Leaders are block STARTS, so current block ends right before
             # the next leader's address. Start search from start_idx+1.
@@ -367,7 +347,7 @@ class CFGGenerator:
                     end_idx = len(self.instructions) - 1
             else:
                 end_idx = len(self.instructions) - 1
-            
+
             block_insns = self.instructions[start_idx:end_idx + 1]
             blocks.append((
                 leader_addr,
@@ -375,13 +355,13 @@ class CFGGenerator:
                 start_idx,
                 end_idx,
             ))
-        
+
         return blocks
-    
+
     def _build_blocks(self, block_bounds: list) -> None:
         """Build BasicBlock objects from computed boundaries."""
         self.blocks = []
-        
+
         for start_addr, end_addr, start_idx, end_idx in block_bounds:
             block_insns = [self.instructions[i].address for i in range(start_idx, end_idx + 1)]
             block = BasicBlock(
@@ -390,25 +370,25 @@ class CFGGenerator:
                 instructions=block_insns,
             )
             self.blocks.append(block)
-            
+
             # Map each instruction address to this block
             for addr in block_insns:
                 self.addr_to_block[addr] = len(self.blocks) - 1
-    
+
     def _build_edges(self) -> None:
         """Build CFG edges from block structure."""
         self.edges = []
-        
+
         for block_idx, block in enumerate(self.blocks):
             if not block.instructions:
                 continue
-            
+
             last_insn_addr = block.instructions[-1]
             last_insn = self.addr_to_insn.get(last_insn_addr)
-            
+
             if last_insn is None:
                 continue
-            
+
             # Return: emit a return edge
             if self._is_return(last_insn):
                 self.edges.append(CFGEdge(
@@ -418,12 +398,12 @@ class CFGGenerator:
                     comment=f"return via {last_insn.mnemonic}",
                 ))
                 continue
-            
+
             # Call instruction: call edge + fall-through return edge
             # (MUST check before branch, since bl/blx are in BRANCH_MNEMONICS too)
             if self._is_call(last_insn):
                 target = self._parse_jump_target(last_insn)
-                
+
                 if target is not None and target in self.addr_to_block:
                     self.edges.append(CFGEdge(
                         from_block=block_idx,
@@ -439,7 +419,7 @@ class CFGGenerator:
                         edge_type="call",
                         comment=f"call via {last_insn.mnemonic} (target unknown)",
                     ))
-                
+
                 # Fall-through (return from call)
                 if block_idx + 1 < len(self.blocks):
                     self.edges.append(CFGEdge(
@@ -449,11 +429,11 @@ class CFGGenerator:
                         comment="return from call (fall-through)",
                     ))
                 continue
-            
+
             # Unconditional branch / jump (non-call)
             if self._is_branch(last_insn) and not self._is_conditional(last_insn):
                 target = self._parse_jump_target(last_insn)
-                
+
                 if target is not None and target in self.addr_to_block:
                     # Direct jump
                     target_idx = self.addr_to_block[target]
@@ -480,20 +460,20 @@ class CFGGenerator:
                         comment=f"jump target 0x{target:x} outside loaded range",
                     ))
                 continue
-            
+
             # Conditional branch: two edges (taken/not-taken)
             if self._is_conditional(last_insn):
                 target = self._parse_jump_target(last_insn)
-                
+
                 # Fall-through (not taken)
                 if block_idx + 1 < len(self.blocks):
                     self.edges.append(CFGEdge(
                         from_block=block_idx,
                         to_block=block_idx + 1,
                         edge_type="conditional_false",
-                        comment=f"branch not taken (fall-through)",
+                        comment="branch not taken (fall-through)",
                     ))
-                
+
                 # Taken (conditional true)
                 if target is not None and target in self.addr_to_block:
                     self.edges.append(CFGEdge(
@@ -510,7 +490,7 @@ class CFGGenerator:
                         comment=f"indirect branch via {last_insn.mnemonic}",
                     ))
                 continue
-            
+
             # Normal fall-through (no branch)
             if block_idx + 1 < len(self.blocks):
                 self.edges.append(CFGEdge(
@@ -518,17 +498,16 @@ class CFGGenerator:
                     to_block=block_idx + 1,
                     edge_type="fallthrough",
                 ))
-    
+
     def _compute_preds(self) -> None:
         """Compute predecessor lists for each block."""
         for block in self.blocks:
             block.preds.clear()
-        
+
         for edge in self.edges:
-            if edge.to_block >= 0 and edge.to_block < len(self.blocks):
-                if edge.from_block not in self.blocks[edge.to_block].preds:
+            if 0 <= edge.to_block < len(self.blocks) and edge.from_block not in self.blocks[edge.to_block].preds:
                     self.blocks[edge.to_block].preds.append(edge.from_block)
-    
+
     def generate(self) -> CFGResult:
         """Generate the complete CFG."""
         if not self.instructions:
@@ -540,13 +519,13 @@ class CFGGenerator:
                 arch=self.arch,
                 stats={"total_instructions": 0, "total_blocks": 0, "total_edges": 0},
             )
-        
+
         # Build CFG
         block_bounds = self._compute_block_boundaries()
         self._build_blocks(block_bounds)
         self._build_edges()
         self._compute_preds()
-        
+
         # Find entry block (usually block with lowest address)
         entry_block = 0
         if self.blocks:
@@ -554,12 +533,12 @@ class CFGGenerator:
                 range(len(self.blocks)),
                 key=lambda i: (self.blocks[i].start_addr, i)
             )
-        
+
         # Compute stats
         edge_types: dict[str, int] = {}
         for edge in self.edges:
             edge_types[edge.edge_type] = edge_types.get(edge.edge_type, 0) + 1
-        
+
         return CFGResult(
             function_name=self.function_name,
             basic_blocks=self.blocks,
@@ -586,12 +565,12 @@ def cfg_from_instructions(
 ) -> CFGResult:
     """
     Build CFG from a list of instruction dicts.
-    
+
     Args:
         instructions: list of dicts with keys: address (int or hex str), mnemonic, op_str, bytes (optional)
         function_name: name of the function
         arch: target architecture
-    
+
     Returns:
         CFGResult object
     """
@@ -602,17 +581,17 @@ def cfg_from_instructions(
             addr = int(addr, 16)
         elif isinstance(addr, int):
             addr = addr
-        
+
         parsed.append(CFGInstruction(
             address=addr,
             mnemonic=str(item.get("mnemonic", "")).strip(),
             op_str=str(item.get("op_str", "")).strip(),
             bytes_hex=str(item.get("bytes", item.get("bytes_hex", ""))).strip(),
         ))
-    
+
     # Sort by address
     parsed.sort(key=lambda x: x.address)
-    
+
     gen = CFGGenerator(function_name, parsed, arch)
     return gen.generate()
 

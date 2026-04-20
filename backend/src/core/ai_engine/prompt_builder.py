@@ -5,6 +5,7 @@ Now also supports LogParseResult dataclass (duck typing).
 """
 
 from __future__ import annotations
+
 from typing import Any
 
 from ...constants import SYSTEM_PROMPT
@@ -19,7 +20,7 @@ def build_prompts(ctx: ErrorContext) -> tuple[str, str]:
         f"Analyze the following embedded Linux kernel log from device **{ctx.device}**.\n\n"
         f"{ctx.stack_trace}\n\n"
         f"Register dump:\n{ctx.register_dump}\n\n"
-        f"Full context (surrounding log lines):\n" + "\n".join(f"  {l}" for l in ctx.surrounding_lines)
+        f"Full context (surrounding log lines):\n" + "\n".join(f"  {ln}" for ln in ctx.surrounding_lines)
     )
     return SYSTEM_PROMPT, user_content
 
@@ -129,7 +130,7 @@ def build_log_analysis_prompt(
         f"## 设备信息\n设备：{device_name}  |  错误类型：{error_type_val}\n\n"
         f"## 错误摘要\n{summary_text}\n\n"
         f"## 日志内容\n"
-        + ("\n".join(f"  {i+1:2d}: {l}" for i, l in enumerate(raw_logs_str.splitlines()[:30])))
+        + ("\n".join(f"  {i+1:2d}: {ln}" for i, ln in enumerate(raw_logs_str.splitlines()[:30])))
         + crash_info
         + code_section
         + f"\n\n{lang_note}"

@@ -3,10 +3,11 @@ SDV Tests for LLM Log Analysis Module
 覆盖: LogParser, LLMAnalysisService, LLM Router, 端到端集成
 """
 
-import pytest
-import time
 import asyncio
-from unittest.mock import AsyncMock, MagicMock, patch
+import time
+from unittest.mock import AsyncMock, patch
+
+import pytest
 
 # ─── Test Fixtures ───────────────────────────────────────────────────────────
 
@@ -158,7 +159,7 @@ class TestFR:
         p = LogParser()
         result = p.parse(["  ", "[PMON] error", "   ", "[PMON] ok"])
         assert len(result.raw_logs) == 2
-        assert all(l.strip() for l in result.raw_logs)
+        assert all(ln.strip() for ln in result.raw_logs)
 
 
 # ─── IC: Interface Contract ───────────────────────────────────────────────────
@@ -168,9 +169,9 @@ class TestIC:
 
     def test_ic01_analyze_returns_llm_analysis_result(self, sample_logs):
         """IC-01: analyze() 返回 LLMAnalysisResult dataclass"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
         svc = get_llm_service()
         req = LLMAnalysisRequest(logs=sample_logs, include_code=False)
@@ -182,8 +183,8 @@ class TestIC:
 
     def test_ic02_logparser_returns_dataclass(self, sample_logs):
         """IC-02: LogParser.parse() 返回 LogParseResult dataclass"""
+
         from src.services.llm_analysis_service import LogParser
-        from dataclasses import dataclass
         p = LogParser()
         result = p.parse(sample_logs)
         assert hasattr(result, "raw_logs")
@@ -209,9 +210,8 @@ class TestIC:
 
     def test_ic05_result_has_all_fields(self):
         """IC-05: LLMAnalysisResult 有所有必需字段"""
-        from src.services.llm_analysis_service import LLMAnalysisResult
-        from src.services.llm_analysis_service import LogParseResult
         from src.schemas.alert import AIDiagnosis
+        from src.services.llm_analysis_service import LLMAnalysisResult, LogParseResult
         pr = LogParseResult(
             raw_logs=["test"], error_count=0, warning_count=0,
             device="x", error_type="x", crash_addresses=[],
@@ -382,9 +382,9 @@ class TestDI:
 
     def test_di05_analyze_returns_valid_diagnosis(self):
         """DI-05: analyze() 返回有效的 AIDiagnosis"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
         svc = get_llm_service()
         req = LLMAnalysisRequest(
@@ -412,9 +412,9 @@ class TestEH:
 
     def test_eh01_analyze_graceful_on_llm_failure(self):
         """EH-01: LLM 调用失败时返回 fallback diagnosis"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
 
         svc = get_llm_service()
@@ -436,9 +436,9 @@ class TestEH:
 
     def test_eh02_analyze_graceful_on_invalid_log(self):
         """EH-02: 非法日志输入时 graceful handling"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
         svc = get_llm_service()
         req = LLMAnalysisRequest(logs=[""], include_code=False)
@@ -454,9 +454,9 @@ class TestEH:
 
     def test_eh04_llm_returns_malformed_json(self):
         """EH-04: LLM 返回格式错误的响应时 graceful"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
 
         svc = get_llm_service()
@@ -479,9 +479,9 @@ class TestEH:
 
     def test_eh05_analyze_with_unreachable_api(self):
         """EH-05: API 不可达时返回有用错误信息"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
 
         svc = get_llm_service()
@@ -534,9 +534,9 @@ class TestPF:
 
     def test_pf04_analyze_no_code_index_speed(self):
         """PF-04: 无代码索引时 analyze() 快速完成（不调用 LLM）"""
-        import asyncio
         from src.services.llm_analysis_service import (
-            get_llm_service, LLMAnalysisRequest,
+            LLMAnalysisRequest,
+            get_llm_service,
         )
 
         svc = get_llm_service()
@@ -549,7 +549,7 @@ class TestPF:
             with patch("httpx.AsyncClient.post", new_callable=AsyncMock) as m:
                 m.side_effect = Exception("skip")
                 t0 = time.time()
-                result = await svc.analyze(req)
+                await svc.analyze(req)
                 elapsed_ms = (time.time() - t0) * 1000
                 return elapsed_ms
 
@@ -579,9 +579,8 @@ class TestRI:
     def test_ri03_schemas_importable(self):
         """RI-03: 所有 schema 类可导入"""
         from src.schemas.llm_log import (
-            LLMLogRequest, LLMLogResponse, LogParseResult,
-            IndexRequest, IndexResponse, BatchLLMLogRequest,
-            Severity, Language, CrashAddress,
+            Language,
+            Severity,
         )
         assert Severity.CRITICAL is not None
         assert Language.ZH is not None
@@ -591,7 +590,6 @@ class TestRI:
 
 def test_sdv_summary():
     """Meta: 确保所有测试类都被收集"""
-    import inspect
     this_file = __file__
     assert this_file.endswith("test_llm_sdv.py")
 

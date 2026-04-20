@@ -3,13 +3,11 @@
 Format and dispatch typed WebSocket messages to the ConnectionManager.
 """
 
-from pathlib import Path
 
-from ...schemas.alert import AlertLevel, AlertPayload, AIDiagnosis
+from ...schemas.alert import AIDiagnosis, AlertLevel, AlertPayload
 from ...schemas.log import MetricsData
-from ...schemas.ws_message import MetricsPayload, StreamPayload, metrics_to_payload
+from ...schemas.ws_message import StreamPayload, metrics_to_payload
 from ...services.memory_service import memory_service
-from ...utils.logger import logger
 from .manager import ConnectionManager
 
 
