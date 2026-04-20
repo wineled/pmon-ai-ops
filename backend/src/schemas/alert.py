@@ -5,7 +5,7 @@ Alert-level enums and structured AI diagnosis / alert payload models.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Optional
 
@@ -35,10 +35,10 @@ class AlertPayload(BaseModel):
     """WebSocket payload emitted when an alert is triggered."""
 
     type: str = Field(default="alert", json_schema_extra={"literal": True})
-    id: str = Field(default_factory=lambda: f"alert-{datetime.utcnow().timestamp()}")
+    id: str = Field(default_factory=lambda: f"alert-{datetime.now(UTC).timestamp()}")
     device: str
     level: AlertLevel
     summary: str = Field(..., description="Short human-readable alert summary")
     ai_suggestion: str = Field(default="")
     patch_content: Optional[str] = Field(default=None)
-    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())

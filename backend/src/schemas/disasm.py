@@ -5,7 +5,7 @@ Data models for binary analysis, disassembly, and address resolution.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from enum import Enum
 from typing import Optional
 
@@ -34,7 +34,7 @@ class BinFileMeta(BaseModel):
     section_count: int = Field(default=0, description="Number of ELF sections")
     symbol_count: int = Field(default=0, description="Number of symbols found")
     disasm_lines: int = Field(default=0, description="Total disassembled instruction count")
-    upload_time: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    upload_time: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
 
 
 class DisasmLine(BaseModel):

@@ -5,7 +5,7 @@ Structured data models for log entries and metrics extracted from raw logs.
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import UTC, datetime
 from typing import Optional
 
 from pydantic import BaseModel, Field
@@ -29,7 +29,7 @@ class MetricsData(BaseModel):
     voltage_mv: Optional[float] = Field(default=None, ge=0, description="Voltage in millivolts")
     current_ma: Optional[float] = Field(default=None, ge=0, description="Current in milliamps")
     temp_c: Optional[float] = Field(default=None, description="Temperature in Celsius")
-    timestamp: datetime = Field(default_factory=datetime.utcnow)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
 class ErrorContext(BaseModel):
@@ -41,5 +41,5 @@ class ErrorContext(BaseModel):
     stack_trace: str = Field(default="", description="Collected stack trace lines")
     register_dump: str = Field(default="", description="Collected register dump lines")
     surrounding_lines: list[str] = Field(default_factory=list, description="5 lines before + 5 after")
-    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(UTC).isoformat())
     file_path: Optional[str] = Field(default=None)
