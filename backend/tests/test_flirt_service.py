@@ -93,7 +93,6 @@ def test_arm_prologue_detection():
     assert func.name.startswith("sub_"), f"Expected sub_xxx, got {func.name}"
     assert not func.is_library, "Should not be marked as library function"
     print(f"  [PASS] ARM prologue detection: {func.name} @ 0x{func.start_addr:x}")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -120,7 +119,6 @@ def test_thumb_prologue_detection():
     assert func.is_thumb, "Should be marked as Thumb mode"
     assert func.arch_mode == "thumb", f"Expected thumb mode, got {func.arch_mode}"
     print(f"  [PASS] Thumb prologue detection: {func.name} (Thumb={func.is_thumb})")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -143,7 +141,6 @@ def test_x86_prologue_detection():
     func = functions[0]
     assert func.start_addr == 0x400000, f"Expected 0x400000, got 0x{func.start_addr:x}"
     print(f"  [PASS] x86 prologue detection: {func.name}")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -185,7 +182,6 @@ def test_flirt_text_loader():
         assert matches2[0].name == "strlen"
 
         print(f"  [PASS] FLIRT text loader: {len(lib.signatures)} signatures loaded")
-        return True
     finally:
         os.unlink(tmp_path)
 
@@ -222,7 +218,6 @@ def test_flirt_signature_matching():
     assert len(funcs_matched) >= 1
 
     print(f"  [PASS] FLIRT signature matching: {len(matched)} functions, {len([f for f in matched if f.is_library])} matched")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -244,7 +239,6 @@ def test_builtin_cmsis_signatures():
     assert len(found) >= 3, f"Expected some CMSIS functions, found: {found}"
 
     print(f"  [PASS] Built-in CMSIS: {len(lib.signatures)} signatures, found {len(found)}/{len(expected)} common funcs")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -276,7 +270,6 @@ def test_analyze_functions_api():
     assert func["start_addr"] == "0x8000", f"Expected '0x8000', got {func['start_addr']}"
 
     print(f"  [PASS] analyze_functions API: returned {len(result)} functions, format OK")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -302,7 +295,6 @@ def test_multiple_functions():
     assert addrs[0] == 0x8000, f"First function should start at 0x8000, got 0x{addrs[0]:x}"
 
     print(f"  [PASS] Multiple functions: detected {len(functions)} functions at {[hex(a) for a in addrs]}")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -323,7 +315,6 @@ def test_builtin_freertos_signatures():
     assert len(found) >= 2, f"Expected some FreeRTOS functions, found: {found}"
 
     print(f"  [PASS] Built-in FreeRTOS: {len(lib.signatures)} signatures, found {len(found)}/{len(expected)} common funcs")
-    return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -342,10 +333,8 @@ def test_aarch64_function():
         code = bytes.fromhex("a90c1bf8910003fda8c31bf8d65f03c0")
         count = sum(1 for _ in cs.disasm(code, 0x8000, 5))
         print(f"  [PASS] AArch64 Capstone workaround: mode=0 ({count} insns)")
-        return True
     except Exception as e:
         print(f"  [SKIP] AArch64: {e}")
-        return True
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
