@@ -11,11 +11,11 @@
 ## Architecture
 
 ```
-TFTP PUT → watchdog → log_parser → error_detector → DeepSeek CoT → WebSocket → React UI
+TFTP PUT → watchdog → log_parser → error_detector → LLM CoT → WebSocket → React UI
                                                                     ↘ patch_generator
 ```
 
-**Backend**: Python 3.11+ / FastAPI / WebSocket / watchdog / DeepSeek API  
+**Backend**: Python 3.11+ / FastAPI / WebSocket / watchdog / Groq API  
 **Frontend**: React 18 / TypeScript / Vite / Tailwind CSS / ECharts / Zustand
 
 ## Quick Start
@@ -163,7 +163,9 @@ Key environment variables (see `.env.example`):
 
 | Variable | Required | Description |
 |----------|----------|-------------|
-| `DEEPSEEK_API_KEY` | Yes | DeepSeek API key |
+| `GROQ_API_KEY` | Yes | Groq API key (free tier) |
+| `DEEPSEEK_BASE_URL` | No | LLM API endpoint (default: `https://api.groq.com/openai/v1`) |
+| `DEEPSEEK_MODEL` | No | LLM model (default: `llama-3.3-70b-versatile`) |
 | `TFTP_RECEIVE_DIR` | No | TFTP log directory (default: `./tftp_receive`) |
 | `HTTP_PORT` | No | Backend port (default: `8000`) |
 | `VITE_PORT` | No | Frontend port (default: `5173`) |
@@ -211,6 +213,6 @@ Private project - All rights reserved.
 ## Acknowledgments
 
 - [FastAPI](https://fastapi.tiangolo.com/) - Modern web framework
-- [DeepSeek](https://deepseek.com/) - AI model provider
+- [Groq](https://groq.com/) - LLM inference engine (free tier)
 - [React](https://react.dev/) - UI library
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
