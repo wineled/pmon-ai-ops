@@ -47,7 +47,7 @@ async def wait_for_file_complete(
 async def read_file_lines(path: Path) -> list[str]:
     """Read all lines from a file asynchronously using aiofiles."""
     try:
-        import aiofiles
+        import aiofiles  # type: ignore[import-untyped]
 
         async with aiofiles.open(path, encoding="utf-8", errors="replace") as f:
             content = await f.read()

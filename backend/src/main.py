@@ -47,12 +47,14 @@ async def lifespan(app: FastAPI):
     settings.ensure_dirs()
 
     # Initialise shared state — both HTTP routes and WS handler access it via request.app.state
-    queue: asyncio.Queue[object] = asyncio.Queue()
+    queue: asyncio.Queue[TFTPFileEvent] = asyncio.Queue()
     ws_manager = ConnectionManager()
     app.state.queue = queue
     app.state.ws_manager = ws_manager
 
     # Start background workers
+    from .core.listener.models import TFTPFileEvent
+
     watcher_task = asyncio.create_task(
         start_watcher(queue, settings.tftp_receive_dir),
         name="tftp-watcher",

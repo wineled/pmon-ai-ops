@@ -53,12 +53,21 @@ async def analyze_logs(req: LLMLogRequest) -> LLMLogResponse:
     3. Call DeepSeek LLM with context
     4. Return structured diagnosis + code references
     """
+    from ..services.llm_analysis_service import LLMAnalysisRequest
+
     service = get_llm_service()
 
+    # Convert LLMLogRequest to LLMAnalysisRequest
+    analysis_req = LLMAnalysisRequest(
+        logs=req.logs,
+        language=req.language.value if hasattr(req.language, 'value') else str(req.language),
+        max_context_tokens=req.max_context_tokens,
+        include_code=req.include_code,
+        model=req.model,
+    )
+
     try:
-        result = await service.analyze(
-            req=req,
-        )
+        result = await service.analyze(req=analysis_req)
     except Exception as e:
         logger.error(f"[LLM Router] analyze error: {e}")
         # Return parse-only result on LLM failure
@@ -130,7 +139,7 @@ async def batch_analyze(reqs: BatchLLMLogRequest) -> BatchLLMLogResponse:
         return_exceptions=True,
     )
 
-    responses = []
+    responses: list[LLMLogResponse] = []
     success_count = 0
     for r in results:
         if isinstance(r, Exception):
@@ -147,7 +156,7 @@ async def batch_analyze(reqs: BatchLLMLogRequest) -> BatchLLMLogResponse:
                 error_message=str(r),
             ))
         else:
-            responses.append(r)
+            responses.append(r)  # type: ignore[arg-type]
             if r.success:
                 success_count += 1
 

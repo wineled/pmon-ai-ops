@@ -52,7 +52,7 @@ class TFTPHandler:
     def on_created(self, event: FileSystemEvent) -> None:
         if event.is_directory:
             return
-        path = Path(event.src_path)
+        path = Path(str(event.src_path))
         if path.suffix.lower() not in LOG_FILE_EXTENSIONS:
             return
         logger.info(f"[TFTP] New file detected: {path.name}")
@@ -104,16 +104,16 @@ async def start_watcher(queue: asyncio.Queue, watch_dir: Path) -> None:
     loop = asyncio.get_running_loop()
     handler = TFTPHandler(queue, loop)
 
-    observer: Observer = Observer()
-    observer.schedule(handler, str(watch_dir), recursive=False)
-    observer.start()
+    observer: "Observer" = Observer()  # type: ignore[valid-type]
+    observer.schedule(handler, str(watch_dir), recursive=False)  # type: ignore[attr-defined]
+    observer.start()  # type: ignore[attr-defined]
     logger.info(f"[TFTP] Watching {watch_dir}")
 
     try:
         while True:
             await asyncio.sleep(3600)  # sleep in 1-hour chunks so cancellation is responsive
     except asyncio.CancelledError:
-        observer.stop()
+        observer.stop()  # type: ignore[attr-defined]
         logger.info("[TFTP] Watcher stopped")
     finally:
-        observer.join(timeout=5.0)
+        observer.join(timeout=5.0)  # type: ignore[attr-defined]

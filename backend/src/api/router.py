@@ -3,6 +3,7 @@
 
 from fastapi import APIRouter, Request
 
+from ..config import settings
 from ..services.health import full_health_check
 from ..services.memory_service import memory_service
 from ..utils.logger import logger
